@@ -408,6 +408,7 @@ export default {
     const appSidebarToggle = this.$refs['app-sidebar__hide']
     appSidebarToggle.addEventListener('click', () => {
       document.body.classList.remove('app-sidebar--show')
+      document.body.classList.add('app-sidebar--hide-desktop')
     })
     
     const appSidebarToggleShrink = this.$refs['app-sidebar__toggle-shrink']
@@ -571,6 +572,7 @@ export default {
 
     .icon-trailing__item-status {
       font-size: .9em;
+      transition: var(--app-sidebar-transition-timing);
     }
   }
 
@@ -595,6 +597,43 @@ export default {
 .app-sidebar .app-sidebar__item--expand {
   > .app-subnav {
     max-height: 100vh;
+  }
+
+  > .app-sidebar__link .icon-trailing {
+    &__item-status {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@media screen and (min-width: 450px) {
+  :root {
+    --app-sidebar-width: 23rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    font-size: 16px;
+    --app-sidebar-width: 20rem;
+  }
+
+  .app-sidebar {
+    transform: translateX(0);
+  }
+
+  .app-sidebar .app-subnav {
+    border-left: .35rem solid #040609;
+  }
+
+  .app-sidebar--hide-desktop {
+    .app-sidebar {
+      transform: translateX(-100%);
+    }
+  }
+
+  .app-sidebar--shrink .app-sidebar {
+    overflow-x: hidden;
   }
 }
 </style>
