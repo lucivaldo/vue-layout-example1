@@ -41,6 +41,10 @@ export default {
     display: inline-block;
     font-size: 1.15rem;
     padding: .15rem .65rem;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 </style>
