@@ -15,11 +15,6 @@
         <a href="#" class="app-sidebar__link">
           <span class="icon icon-leading"><i class="fas fa-home"></i></span>
           <span class="app-sidebar__link__text">Home</span>
-          <span class="icon icon-trailing">
-            <span class="icon-trailing__item-status">
-              <i class="fas fa-chevron-down"></i>
-            </span>
-          </span>
         </a>
       </li>
 
