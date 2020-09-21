@@ -217,13 +217,11 @@ export default {
 
   mounted() {
     const appSidebarToggle = this.$refs['app-sidebar__hide']
-
     appSidebarToggle.addEventListener('click', () => {
       document.body.classList.remove('app-sidebar--show')
     })
     
     const appSidebarToggleShrink = this.$refs['app-sidebar__toggle-shrink']
-
     appSidebarToggleShrink.addEventListener('click', () => {
       document.body.classList.toggle('app-sidebar--shrink')
     })
