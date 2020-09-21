@@ -574,7 +574,8 @@ export default {
     }
   }
 
-  &__link:hover, &__item--expand > &__link {
+  &__link:not(.app-sidebar__toggle-shrink):hover,
+  &__item--expand > &__link:not(.app-sidebar__toggle-shrink) {
     background-color: #040609;
   }
 
