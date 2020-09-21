@@ -28,9 +28,83 @@
             </span>
           </span>
         </a>
+
+        <ul class="app-subnav">
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="far fa-clipboard"></i></span>
+              <span class="app-sidebar__link__text">Relatórios</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
+              </span>
+            </a>
+          </li>
+
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="fas fa-sliders-h"></i></span>
+              <span class="app-sidebar__link__text">Configurações</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
+              </span>
+            </a>
+          </li>
+
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="fas fa-file-invoice-dollar"></i></span>
+              <span class="app-sidebar__link__text">Gestor de Solicitações</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
+              </span>
+            </a>
+          </li>
+
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="fas fa-list-ol"></i></span>
+              <span class="app-sidebar__link__text">Gestão Almoxarifado</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
+              </span>
+            </a>
+          </li>
+
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="far fa-money-bill-alt"></i></span>
+              <span class="app-sidebar__link__text">Grupo Espécie</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
+              </span>
+            </a>
+          </li>
+
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
+              <span class="app-sidebar__link__text">Solicitação</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
+              </span>
+            </a>
+          </li>
+        </ul>
       </li>
 
-      <li class="app-sidebar__item app-sidebar__item--active">
+      <li class="app-sidebar__item">
         <a href="#" class="app-sidebar__link">
           <span class="icon icon-leading"><i class="fas fa-house-user"></i></span>
           <span class="app-sidebar__link__text">Controle Patrimonial</span>
@@ -220,6 +294,16 @@ export default {
     appSidebarToggleShrink.addEventListener('click', () => {
       document.body.classList.toggle('app-sidebar--shrink')
     })
+
+    const appSubnavs = document.querySelectorAll('.app-subnav')
+    appSubnavs.forEach(appSubnav => {
+      const appSidebarItem = appSubnav.closest('.app-sidebar__item')
+      const appSidebarLink = appSidebarItem.querySelector('.app-sidebar__link')
+
+      appSidebarLink.addEventListener('click', () => {
+        appSidebarItem.classList.toggle('app-sidebar__item--expand')
+      })
+    })
   }
 }
 </script>
@@ -333,7 +417,7 @@ export default {
     // }
   }
 
-  &__link:hover, &__item--active {
+  &__link:hover, &__item--expand > &__link {
     background-color: #040609;
   }
 
@@ -379,6 +463,23 @@ export default {
       font-size: 1.15rem;
       padding: .15rem .65rem;
     }
+  }
+}
+
+.app-sidebar .app-subnav {
+  border-left: 3px solid tomato;
+  max-height: 0;
+  overflow: hidden;
+  transition: .3s;
+
+  .app-sidebar__item {
+    margin-left: .25rem;
+  }
+}
+
+.app-sidebar .app-sidebar__item--expand {
+  > .app-subnav {
+    max-height: 100vh;
   }
 }
 </style>
