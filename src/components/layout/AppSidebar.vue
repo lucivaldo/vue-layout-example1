@@ -628,6 +628,7 @@ export default {
 
   .app-sidebar--hide-desktop {
     .app-sidebar {
+      box-shadow: none;
       transform: translateX(-100%);
     }
   }

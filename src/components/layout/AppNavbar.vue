@@ -74,9 +74,7 @@ export default {
   background-color: white;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 
               0 2px 2px rgba(0, 0, 0, 0.11), 
-              0 4px 4px rgba(0, 0, 0, 0.11), 
-              0 6px 8px rgba(0, 0, 0, 0.11),
-              0 8px 16px rgba(0, 0, 0, 0.11);
+              0 4px 4px rgba(0, 0, 0, 0.11);
   display: flex;
   align-items: center;
   height: var(--app-navbar-height);
@@ -177,12 +175,10 @@ export default {
 
     &__actions {
       background-color: white;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 
-                  0 2px 2px rgba(0, 0, 0, 0.20), 
-                  0 4px 4px rgba(0, 0, 0, 0.15), 
-                  0 8px 8px rgba(0, 0, 0, 0.10),
-                  0 16px 16px rgba(0, 0, 0, 0.05);
+      border-top: 1px solid rgba(0, 0, 0, 0.11);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11),
+                  0 2px 2px rgba(0, 0, 0, 0.11),
+                  0 4px 4px rgba(0, 0, 0, 0.11);
       position: absolute;
       top: 100%;
       right: 0;
