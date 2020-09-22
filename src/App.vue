@@ -41,6 +41,14 @@ export default {
   margin-left: 0;
 }
 
+.app-sidebar--shrink.app-sidebar--overflow #main {
+  margin-left: calc(5rem - 4px);
+}
+
+.app-sidebar--shrink.app-sidebar--overflow.app-sidebar--hide-desktop #main {
+  margin-left: 0;
+}
+
 @media screen and (min-width: 1024px) {
   #main {
     margin-left: var(--app-sidebar-width);
