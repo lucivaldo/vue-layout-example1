@@ -12,7 +12,7 @@
       <span class="app-navbar__app__name">App Name</span>
     </div>
 
-    <div class="notifications notifications--has-notifications">
+    <div class="notifications notifications--has-notifications" ref="notifications">
       <a href="#" class="notifications__toggler" ref="notifications__toggler">
         <span class="icon"><i class="fas fa-bell"></i></span>
       </a>
@@ -144,6 +144,13 @@ export default {
     notificationsToggler.addEventListener('click', () => {
       notificationsToggler.closest('.notifications')
         .classList.toggle('notifications--expand')
+    })
+
+    const notifications = this.$refs.notifications
+    document.addEventListener('click', (event) => {
+      if (!notifications.contains(event.target)) {
+        notifications.classList.remove('notifications--expand')
+      }
     })
   }
 }
