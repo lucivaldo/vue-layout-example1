@@ -24,7 +24,16 @@ export default {
 </script>
 
 <style lang="scss">
+:root {
+  --main-bg-color: white;
+  --main-text-color: #333;
+
+  --headings-text-color: var(--main-text-color);
+  --headings-text-hover-color: #000;
+}
 #main {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
   margin-top: var(--app-navbar-height);
   padding: .75rem;
 }

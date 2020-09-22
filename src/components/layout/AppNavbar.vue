@@ -12,6 +12,15 @@
       <span class="app-navbar__app__name">App Name</span>
     </div>
 
+    <div class="app-theme-toggle">
+      <input type="checkbox"
+        class="app-theme-toggle__toggler"
+        id="app-theme-toggle__toggler"
+        ref="app-theme-toggle__toggler"
+        >
+      <label for="app-theme-toggle__toggler"></label>
+    </div>
+
     <div class="notifications notifications--has-notifications" ref="notifications">
       <a href="#" class="notifications__toggler" ref="notifications__toggler">
         <span class="icon"><i class="fas fa-bell"></i></span>
@@ -152,17 +161,113 @@ export default {
         notifications.classList.remove('notifications--expand')
       }
     })
+
+    this.configureTheme()
+  },
+
+  methods: {
+    configureTheme() {
+      const getStyle = (element, property) => {
+        return window
+          .getComputedStyle(element)
+          .getPropertyValue(property)
+      }
+
+      const root = document.querySelector(':root')
+
+      const initialColors = {
+        appNavbarBgColor: getStyle(root, '--app-navbar-bg-color'),
+        appNavbarTextColor: getStyle(root, '--app-navbar-text-color'),
+        appNavbarUserNameColor: getStyle(root, '--app-navbar-user-name-color'),
+        appNavbarUserNameHoverColor: getStyle(root, '--app-navbar-user-name-hover-color'),
+        appNavbarUserRoleColor: getStyle(root, '--app-navbar-user-role-color'),
+        appNavbarUserRoleHoverColor: getStyle(root, '--app-navbar-user-role-hover-color'),
+        appNavbarUserToggleActionsColor: getStyle(root, '--app-navbar-user-toggle-actions-color'),
+        appNavbarUserToggleActionsHoverColor: getStyle(root, '--app-navbar-user-toggle-actions-hover-color'),
+
+        appNavbarUserActionsBgColor: getStyle(root, '--app-navbar-user-actions-bg-color'),
+        appNavbarUserActionsItemBgColor: getStyle(root, '--app-navbar-user-actions-item-bg-color'),
+        appNavbarUserActionsItemBgHoverColor: getStyle(root, '--app-navbar-user-actions-item-bg-hover-color'),
+        appNavbarUserActionsItemColor: getStyle(root, '--app-navbar-user-actions-item-color'),
+        appNavbarUserActionsItemHoverColor: getStyle(root, '--app-navbar-user-actions-item-hover-color'),
+
+        appSidebarBgColor: getStyle(root, '--app-sidebar-bg-color'),
+        appSidebarDividerColor: getStyle(root, '--app-sidebar-divider-color'),
+
+        mainBgColor: getStyle(root, '--main-bg-color'),
+        mainTextColor: getStyle(root, '--main-text-color'),
+
+        headingsTextColor: getStyle(root, '--headings-text-color'),
+        headingsTextHoverColor: getStyle(root, '--headings-text-hover-color'),
+      }
+
+      const darkMode = {
+        appNavbarBgColor: '#333',
+        appNavbarTextColor: 'white',
+        appNavbarUserNameColor: 'white',
+        appNavbarUserNameHoverColor: 'white',
+        appNavbarUserRoleColor: 'white',
+        appNavbarUserRoleHoverColor: 'white',
+        appNavbarUserToggleActionsColor: 'white',
+        appNavbarUserToggleActionsHoverColor: 'white',
+
+        appNavbarUserActionsBgColor: '#333',
+        appNavbarUserActionsItemBgColor: '#333',
+        appNavbarUserActionsItemBgHoverColor: '#111',
+        appNavbarUserActionsItemColor: 'white',
+        appNavbarUserActionsItemHoverColor: 'white',
+
+        appSidebarBgColor: '#333',
+        appSidebarDividerColor: '#dedede',
+
+        mainBgColor: '#333',
+        mainTextColor: 'white',
+
+        headingsTextColor: 'white',
+        headingsTextHoverColor: 'white',
+      }
+
+      const transformKey = key => {
+        return '--' + key.replace(/([A-Z])/g, "-$1").toLowerCase()
+      }
+
+      const changeColors = colors => {
+        Object.keys(colors).map(key => {
+          root.style.setProperty(transformKey(key), colors[key])
+        })
+      }
+
+      const themeToggler = this.$refs['app-theme-toggle__toggler']
+      themeToggler.addEventListener('click', () => {
+        const checked = themeToggler.checked
+        checked ? changeColors(darkMode) : changeColors(initialColors)
+      })
+    }
   }
 }
 </script>
 
 <style lang="scss">
 :root {
+  --app-navbar-bg-color: #fff;
+  --app-navbar-text-color: #555;
+  --app-navbar-user-name-color: #555;
+  --app-navbar-user-name-hover-color: #333;
+  --app-navbar-user-role-color: #626262;
+  --app-navbar-user-role-hover-color: #444;
+  --app-navbar-user-toggle-actions-color: #6a6a6a;
+  --app-navbar-user-toggle-actions-hover-color: #333;
+
+  --app-navbar-user-actions-bg-color: white;
+  --app-navbar-user-actions-item-bg-color: white;
+  --app-navbar-user-actions-item-bg-hover-color: rgba(0, 0, 0, 0.05);
+  --app-navbar-user-actions-item-color: #333;
+  --app-navbar-user-actions-item-hover-color: #000;
   --app-navbar-height: 3.75rem;
 }
 
 .app-navbar {
-  background-color: white;
+  background-color: var(--app-navbar-bg-color);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 
               0 2px 2px rgba(0, 0, 0, 0.11), 
               0 4px 4px rgba(0, 0, 0, 0.11);
@@ -176,6 +281,7 @@ export default {
   width: 100%;
 
   .app-sidebar__show {
+    color: var(--app-navbar-text-color);
     display: inline-block;
     font-size: 1.15rem;
     padding: .15rem .65rem;
@@ -186,6 +292,7 @@ export default {
   }
 
   &__app {
+    color: var(--app-navbar-text-color);
     display: none;
   }
 
@@ -220,38 +327,38 @@ export default {
     }
 
     &__name {
-      color: #555;
+      color: var(--app-navbar-user-name-color);
       font-weight: bold;
       letter-spacing: 1px;
 
       &:hover {
-        color: #333;
+        color: var(--app-navbar-user-name-hover-color);
       }
     }
 
     &__role {
-      color: #626262;
+      color: var(--app-navbar-user-role-color);
       font-weight: bold;
       font-size: .75rem;
       letter-spacing: 1px;
 
       &:hover {
-        color: #444;
+        color: var(--app-navbar-user-role-hover-color);
       }
     }
 
     &__toggle-actions .icon {
-      color: #6a6a6a;
+      color: var(--app-navbar-user-toggle-actions-color);
       padding: .5rem;
 
       &:hover {
-        color: #333;
+        color: var(--app-navbar-user-toggle-actions-hover-color);
         cursor: pointer;
       }
     }
 
     &__actions {
-      background-color: white;
+      background-color: var(--app-navbar-user-actions-bg-color);
       border-top: 1px solid rgba(0, 0, 0, 0.11);
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11),
                   0 2px 2px rgba(0, 0, 0, 0.11),
@@ -270,13 +377,14 @@ export default {
       &__item {
         display: block;
         text-decoration: none;
-        color: #333;
+        background-color: var(--app-navbar-user-actions-item-bg-color);
+        color: var(--app-navbar-user-actions-item-color);
         padding: .75rem 1rem;
         border-radius: 5px;
 
         &:hover {
-          background-color: rgba(0, 0, 0, 0.05);
-          color: black;
+          background-color: var(--app-navbar-user-actions-item-bg-hover-color);
+          color: var(--app-navbar-user-actions-item-hover-color);
         }
       }
     }
@@ -289,11 +397,64 @@ export default {
   }
 }
 
-.notifications {
-  background-color: white;
+.app-theme-toggle {
   display: flex;
   align-items: center;
   margin-left: auto;
+  position: relative;
+
+  input {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  label {
+    background-color: #c4cad7;
+    display: inline-block;
+    width: 2.8rem;
+    height: 1.55rem;
+    border-radius: .75rem;
+    margin: 0 1rem;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(100, 100, 100, 0.5);
+  }
+
+  label:after {
+    content: '';
+    display: block;
+    width: 1.1rem;
+    height: 1.1rem;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    transform: translate(5px, 4px);
+    transition: var(--app-transition-timing);
+  }
+
+  label:hover {
+    background-color: #aea9b5;
+    cursor: pointer;
+  }
+
+  input:checked ~ label {
+    background-color: #453f2a;
+
+    &:after {
+      transform: translate(calc(100% + 4px), 4px);
+    }
+  }
+}
+
+.notifications {
+  background-color: var(----app-navbar-bg-color);
+  display: flex;
+  align-items: center;
   margin-right: .85rem;
   position: relative;
   height: 100%;
