@@ -13,7 +13,7 @@ Desktop:
 
 Mobile:
 
-![Mobile preview](https://github.com/lucivaldo/vue-layout-example1/blob/master/src/assets/images/layout1-mobile-600.gif)
+![Mobile preview](https://github.com/lucivaldo/vue-layout-example1/blob/master/src/assets/images/layout1-mobile-320.gif)
 
 ## Project setup
 ```
