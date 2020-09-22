@@ -348,18 +348,6 @@
       </a>
     </li>
 
-    <li class="app-sidebar__item">
-      <a href="#" class="app-sidebar__link">
-        <span class="icon icon-leading"><i class="fas fa-store-alt"></i></span>
-        <span class="app-sidebar__link__text">Subdefensoria</span>
-        <span class="icon icon-trailing">
-          <span class="icon-trailing__item-status">
-            <i class="fas fa-chevron-down"></i>
-          </span>
-        </span>
-      </a>
-    </li>
-
     <div class="app-sidebar__footer">
       <li class="app-sidebar__divider"></li>
 
@@ -574,6 +562,11 @@ export default {
       font-size: .9em;
       transition: var(--app-sidebar-transition-timing);
     }
+  }
+
+  &__toggle-shrink:hover {
+    background-color: white;
+    color: #040609;
   }
 
   &__link:not(.app-sidebar__toggle-shrink):hover,
