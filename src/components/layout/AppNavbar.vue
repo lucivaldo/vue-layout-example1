@@ -79,6 +79,10 @@ export default {
   align-items: center;
   height: var(--app-navbar-height);
   padding: .5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 
   .app-sidebar__show {
     display: inline-block;

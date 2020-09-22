@@ -3,7 +3,7 @@
     <AppNavbar/>
     <AppSidebar/>
 
-    <main class="main">
+    <main id="main">
       <router-view/>
     </main>
   </div>
@@ -22,3 +22,28 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+#main {
+  margin-top: var(--app-navbar-height);
+  padding: .75rem;
+}
+
+.app-sidebar--hide-desktop #main {
+  margin-left: 0;
+}
+
+.app-sidebar--shrink #main {
+  margin-left: calc(1rem + var(--app-sidebar-icon-width) + .75rem);
+}
+
+.app-sidebar--shrink.app-sidebar--hide-desktop #main {
+  margin-left: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  #main {
+    margin-left: var(--app-sidebar-width);
+  }
+}
+</style>
