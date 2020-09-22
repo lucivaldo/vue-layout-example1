@@ -4,6 +4,14 @@
       <span class="icon"><i class="fas fa-bars"></i></span>
     </div>
 
+    <div class="app-navbar__app">
+      <div class="app-navbar__app__logo">
+        <img src="../../assets/images/logo.svg" alt="App Logo">
+      </div>
+
+      <span class="app-navbar__app__name">App Name</span>
+    </div>
+
     <div class="app-navbar__notifications">
       <span class="icon"><i class="fas fa-bell"></i></span>
     </div>
@@ -92,6 +100,10 @@ export default {
     &:hover {
       cursor: pointer;
     }
+  }
+
+  &__app {
+    display: none;
   }
 
   &__notifications {
@@ -213,6 +225,54 @@ export default {
       visibility: visible;
       z-index: 1;
     }
+  }
+}
+
+@media screen and (min-width: 530px) {
+  .app-navbar {
+    &__app {
+      display: flex;
+      align-items: center;
+      transition: var(--app-sidebar-transition-timing);
+
+      &__logo {
+        border: 3px solid rgba(10, 10, 10, .75);
+        border-radius: 50%;
+        margin: 0 1rem;
+        width: 3rem;
+        height: 3rem;
+
+        img {
+          width: 3rem;
+          height: auto;
+        }
+      }
+
+      &__name {
+        font-weight: bold;
+        font-size: 1.35rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 972px) {
+  .app-sidebar--show .app-navbar__app {
+    margin-left: calc(var(--app-sidebar-width) - 1rem);
+  }
+
+  .app-sidebar--hide-desktop .app-navbar__app {
+    margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .app-navbar__app, .app-sidebar--show .app-navbar__app {
+    margin-left: calc(var(--app-sidebar-width) - 2rem);
+  }
+
+  .app-sidebar--show.app-sidebar--shrink .app-navbar__app {
+    margin-left: 1rem;
   }
 }
 </style>
