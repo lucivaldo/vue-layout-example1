@@ -1,5 +1,5 @@
 <template>
-  <ul class="app-sidebar" ref="app-sidebar">
+  <div class="app-sidebar" ref="app-sidebar">
     <header class="app-sidebar__header">
       <span class="app-sidebar__header__icon icon-leading"><i class="fas fa-layer-group"></i></span>
       <span class="app-sidebar__header__title">App Name</span>
@@ -10,343 +10,345 @@
       </span>
     </header>
 
-    <li class="app-sidebar__item">
-      <a href="#" class="app-sidebar__link">
-        <span class="icon icon-leading"><i class="fas fa-home"></i></span>
-        <span class="app-sidebar__link__text">Home</span>
-      </a>
-    </li>
+    <ul class="app-sidebar__nav" ref="app-sidebar__nav">
+      <li class="app-sidebar__item">
+        <a href="#" class="app-sidebar__link">
+          <span class="icon icon-leading"><i class="fas fa-home"></i></span>
+          <span class="app-sidebar__link__text">Home</span>
+        </a>
+      </li>
 
-    <li class="app-sidebar__item">
-      <a href="#" class="app-sidebar__link">
-        <span class="icon icon-leading"><i class="fas fa-dolly-flatbed"></i></span>
-        <span class="app-sidebar__link__text">Controle Almoxarifado</span>
-        <span class="icon icon-trailing">
-          <span class="icon-trailing__item-status">
-            <i class="fas fa-chevron-down"></i>
+      <li class="app-sidebar__item">
+        <a href="#" class="app-sidebar__link">
+          <span class="icon icon-leading"><i class="fas fa-dolly-flatbed"></i></span>
+          <span class="app-sidebar__link__text">Controle Almoxarifado</span>
+          <span class="icon icon-trailing">
+            <span class="icon-trailing__item-status">
+              <i class="fas fa-chevron-down"></i>
+            </span>
           </span>
-        </span>
-      </a>
+        </a>
 
-      <ul class="app-subnav">
-        <li class="app-sidebar__item">
-          <a href="#" class="app-sidebar__link">
-            <span class="icon icon-leading"><i class="far fa-clipboard"></i></span>
-            <span class="app-sidebar__link__text">Relatórios</span>
-            <span class="icon icon-trailing">
-              <span class="icon-trailing__item-status">
-                <i class="fas fa-chevron-down"></i>
+        <ul class="app-sidebar__subnav">
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="far fa-clipboard"></i></span>
+              <span class="app-sidebar__link__text">Relatórios</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
               </span>
-            </span>
-          </a>
-        </li>
+            </a>
+          </li>
 
-        <li class="app-sidebar__item">
-          <a href="#" class="app-sidebar__link">
-            <span class="icon icon-leading"><i class="fas fa-sliders-h"></i></span>
-            <span class="app-sidebar__link__text">Configurações</span>
-            <span class="icon icon-trailing">
-              <span class="icon-trailing__item-status">
-                <i class="fas fa-chevron-down"></i>
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="fas fa-sliders-h"></i></span>
+              <span class="app-sidebar__link__text">Configurações</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
               </span>
-            </span>
-          </a>
-        </li>
+            </a>
+          </li>
 
-        <li class="app-sidebar__item">
-          <a href="#" class="app-sidebar__link">
-            <span class="icon icon-leading"><i class="fas fa-file-invoice-dollar"></i></span>
-            <span class="app-sidebar__link__text">Gestor de Solicitações</span>
-            <span class="icon icon-trailing">
-              <span class="icon-trailing__item-status">
-                <i class="fas fa-chevron-down"></i>
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="fas fa-file-invoice-dollar"></i></span>
+              <span class="app-sidebar__link__text">Gestor de Solicitações</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
               </span>
-            </span>
-          </a>
-        </li>
+            </a>
+          </li>
 
-        <li class="app-sidebar__item">
-          <a href="#" class="app-sidebar__link">
-            <span class="icon icon-leading"><i class="fas fa-list-ol"></i></span>
-            <span class="app-sidebar__link__text">Gestão Almoxarifado</span>
-            <span class="icon icon-trailing">
-              <span class="icon-trailing__item-status">
-                <i class="fas fa-chevron-down"></i>
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="fas fa-list-ol"></i></span>
+              <span class="app-sidebar__link__text">Gestão Almoxarifado</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
               </span>
-            </span>
-          </a>
-        </li>
+            </a>
+          </li>
 
-        <li class="app-sidebar__item">
-          <a href="#" class="app-sidebar__link">
-            <span class="icon icon-leading"><i class="far fa-money-bill-alt"></i></span>
-            <span class="app-sidebar__link__text">Grupo Espécie</span>
-            <span class="icon icon-trailing">
-              <span class="icon-trailing__item-status">
-                <i class="fas fa-chevron-down"></i>
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="far fa-money-bill-alt"></i></span>
+              <span class="app-sidebar__link__text">Grupo Espécie</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
               </span>
-            </span>
-          </a>
-        </li>
+            </a>
+          </li>
 
-        <li class="app-sidebar__item">
-          <a href="#" class="app-sidebar__link">
-            <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
-            <span class="app-sidebar__link__text">Solicitação</span>
-            <span class="icon icon-trailing">
-              <span class="icon-trailing__item-status">
-                <i class="fas fa-chevron-down"></i>
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
+              <span class="app-sidebar__link__text">Solicitação</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
               </span>
-            </span>
-          </a>
-        </li>
-      </ul>
-    </li>
+            </a>
+          </li>
+        </ul>
+      </li>
 
-    <li class="app-sidebar__item">
-      <a href="#" class="app-sidebar__link">
-        <span class="icon icon-leading"><i class="fas fa-house-user"></i></span>
-        <span class="app-sidebar__link__text">Controle Patrimonial</span>
-        <span class="icon icon-trailing">
-          <span class="icon-trailing__notification">
-            12
+      <li class="app-sidebar__item">
+        <a href="#" class="app-sidebar__link">
+          <span class="icon icon-leading"><i class="fas fa-house-user"></i></span>
+          <span class="app-sidebar__link__text">Controle Patrimonial</span>
+          <span class="icon icon-trailing">
+            <span class="icon-trailing__notification">
+              12
+            </span>
+            <span class="icon-trailing__item-status">
+              <i class="fas fa-chevron-down"></i>
+            </span>
           </span>
-          <span class="icon-trailing__item-status">
-            <i class="fas fa-chevron-down"></i>
-          </span>
-        </span>
-      </a>
+        </a>
 
-      <ul class="app-subnav">
-        <li class="app-sidebar__item">
-          <a href="#" class="app-sidebar__link">
-            <span class="icon icon-leading"><i class="far fa-clipboard"></i></span>
-            <span class="app-sidebar__link__text">Relatórios</span>
-            <span class="icon icon-trailing">
-              <span class="icon-trailing__item-status">
-                <i class="fas fa-chevron-down"></i>
+        <ul class="app-sidebar__subnav">
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="far fa-clipboard"></i></span>
+              <span class="app-sidebar__link__text">Relatórios</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
               </span>
-            </span>
-          </a>
-        </li>
+            </a>
+          </li>
 
-        <li class="app-sidebar__item">
-          <a href="#" class="app-sidebar__link">
-            <span class="icon icon-leading"><i class="fas fa-sliders-h"></i></span>
-            <span class="app-sidebar__link__text">Avaliação Patrimonial</span>
-            <span class="icon icon-trailing">
-              <span class="icon-trailing__item-status">
-                <i class="fas fa-chevron-down"></i>
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="fas fa-sliders-h"></i></span>
+              <span class="app-sidebar__link__text">Avaliação Patrimonial</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
               </span>
-            </span>
-          </a>
-        </li>
+            </a>
+          </li>
 
-        <li class="app-sidebar__item">
-          <a href="#" class="app-sidebar__link">
-            <span class="icon icon-leading"><i class="fas fa-file-invoice-dollar"></i></span>
-            <span class="app-sidebar__link__text">Configurações</span>
-            <span class="icon icon-trailing">
-              <span class="icon-trailing__item-status">
-                <i class="fas fa-chevron-down"></i>
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="fas fa-file-invoice-dollar"></i></span>
+              <span class="app-sidebar__link__text">Configurações</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
               </span>
-            </span>
-          </a>
-        </li>
+            </a>
+          </li>
 
-        <li class="app-sidebar__item">
-          <a href="#" class="app-sidebar__link">
-            <span class="icon icon-leading"><i class="fas fa-list-ol"></i></span>
-            <span class="app-sidebar__link__text">Contas Patrimoniais</span>
-            <span class="icon icon-trailing">
-              <span class="icon-trailing__item-status">
-                <i class="fas fa-chevron-down"></i>
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="fas fa-list-ol"></i></span>
+              <span class="app-sidebar__link__text">Contas Patrimoniais</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
               </span>
-            </span>
-          </a>
-        </li>
+            </a>
+          </li>
 
-        <li class="app-sidebar__item">
-          <a href="#" class="app-sidebar__link">
-            <span class="icon icon-leading"><i class="far fa-money-bill-alt"></i></span>
-            <span class="app-sidebar__link__text">Gestor de Inventários</span>
-            <span class="icon icon-trailing">
-              <span class="icon-trailing__item-status">
-                <i class="fas fa-chevron-down"></i>
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="far fa-money-bill-alt"></i></span>
+              <span class="app-sidebar__link__text">Gestor de Inventários</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
               </span>
-            </span>
-          </a>
-        </li>
+            </a>
+          </li>
 
-        <li class="app-sidebar__item">
-          <a href="#" class="app-sidebar__link">
-            <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
-            <span class="app-sidebar__link__text">Gestão Patrimonial</span>
-            <span class="icon icon-trailing">
-              <span class="icon-trailing__item-status">
-                <i class="fas fa-chevron-down"></i>
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
+              <span class="app-sidebar__link__text">Gestão Patrimonial</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
               </span>
-            </span>
-          </a>
-        </li>
+            </a>
+          </li>
 
-        <li class="app-sidebar__item">
-          <a href="#" class="app-sidebar__link">
-            <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
-            <span class="app-sidebar__link__text">Grupo Espécie</span>
-            <span class="icon icon-trailing">
-              <span class="icon-trailing__item-status">
-                <i class="fas fa-chevron-down"></i>
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
+              <span class="app-sidebar__link__text">Grupo Espécie</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
               </span>
-            </span>
-          </a>
-        </li>
+            </a>
+          </li>
 
-        <li class="app-sidebar__item">
-          <a href="#" class="app-sidebar__link">
-            <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
-            <span class="app-sidebar__link__text">Localizações Patrimoniais</span>
-            <span class="icon icon-trailing">
-              <span class="icon-trailing__item-status">
-                <i class="fas fa-chevron-down"></i>
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
+              <span class="app-sidebar__link__text">Localizações Patrimoniais</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
               </span>
-            </span>
-          </a>
-        </li>
+            </a>
+          </li>
 
-        <li class="app-sidebar__item">
-          <a href="#" class="app-sidebar__link">
-            <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
-            <span class="app-sidebar__link__text">Sequência Patrimonial</span>
-            <span class="icon icon-trailing">
-              <span class="icon-trailing__item-status">
-                <i class="fas fa-chevron-down"></i>
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
+              <span class="app-sidebar__link__text">Sequência Patrimonial</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
               </span>
-            </span>
-          </a>
-        </li>
+            </a>
+          </li>
 
-        <li class="app-sidebar__item">
-          <a href="#" class="app-sidebar__link">
-            <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
-            <span class="app-sidebar__link__text">Tabela de Avaliação</span>
-            <span class="icon icon-trailing">
-              <span class="icon-trailing__item-status">
-                <i class="fas fa-chevron-down"></i>
+          <li class="app-sidebar__item">
+            <a href="#" class="app-sidebar__link">
+              <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
+              <span class="app-sidebar__link__text">Tabela de Avaliação</span>
+              <span class="icon icon-trailing">
+                <span class="icon-trailing__item-status">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
               </span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="app-sidebar__item">
+        <a href="#" class="app-sidebar__link">
+          <span class="icon icon-leading"><i class="fas fa-comment-dollar"></i></span>
+          <span class="app-sidebar__link__text">Diárias</span>
+          <span class="icon icon-trailing">
+            <span class="icon-trailing__item-status">
+              <i class="fas fa-chevron-down"></i>
             </span>
-          </a>
-        </li>
-      </ul>
-    </li>
-
-    <li class="app-sidebar__item">
-      <a href="#" class="app-sidebar__link">
-        <span class="icon icon-leading"><i class="fas fa-comment-dollar"></i></span>
-        <span class="app-sidebar__link__text">Diárias</span>
-        <span class="icon icon-trailing">
-          <span class="icon-trailing__item-status">
-            <i class="fas fa-chevron-down"></i>
           </span>
-        </span>
-      </a>
-    </li>
+        </a>
+      </li>
 
-    <li class="app-sidebar__item">
-      <a href="#" class="app-sidebar__link">
-        <span class="icon icon-leading"><i class="fas fa-atlas"></i></span>
-        <span class="app-sidebar__link__text">EDOC</span>
-        <span class="icon icon-trailing">
-          <span class="icon-trailing__item-status">
-            <i class="fas fa-chevron-down"></i>
+      <li class="app-sidebar__item">
+        <a href="#" class="app-sidebar__link">
+          <span class="icon icon-leading"><i class="fas fa-atlas"></i></span>
+          <span class="app-sidebar__link__text">EDOC</span>
+          <span class="icon icon-trailing">
+            <span class="icon-trailing__item-status">
+              <i class="fas fa-chevron-down"></i>
+            </span>
           </span>
-        </span>
-      </a>
-    </li>
+        </a>
+      </li>
 
-    <li class="app-sidebar__item">
-      <a href="#" class="app-sidebar__link">
-        <span class="icon icon-leading"><i class="fas fa-dollar-sign"></i></span>
-        <span class="app-sidebar__link__text">Financeiro</span>
-        <span class="icon icon-trailing">
-          <span class="icon-trailing__item-status">
-            <i class="fas fa-chevron-down"></i>
+      <li class="app-sidebar__item">
+        <a href="#" class="app-sidebar__link">
+          <span class="icon icon-leading"><i class="fas fa-dollar-sign"></i></span>
+          <span class="app-sidebar__link__text">Financeiro</span>
+          <span class="icon icon-trailing">
+            <span class="icon-trailing__item-status">
+              <i class="fas fa-chevron-down"></i>
+            </span>
           </span>
-        </span>
-      </a>
-    </li>
+        </a>
+      </li>
 
-    <li class="app-sidebar__item">
-      <a href="#" class="app-sidebar__link">
-        <span class="icon icon-leading"><i class="fas fa-hand-holding-usd"></i></span>
-        <span class="app-sidebar__link__text">Folha de Pagamento</span>
-        <span class="icon icon-trailing">
-          <span class="icon-trailing__item-status">
-            <i class="fas fa-chevron-down"></i>
+      <li class="app-sidebar__item">
+        <a href="#" class="app-sidebar__link">
+          <span class="icon icon-leading"><i class="fas fa-hand-holding-usd"></i></span>
+          <span class="app-sidebar__link__text">Folha de Pagamento</span>
+          <span class="icon icon-trailing">
+            <span class="icon-trailing__item-status">
+              <i class="fas fa-chevron-down"></i>
+            </span>
           </span>
-        </span>
-      </a>
-    </li>
+        </a>
+      </li>
 
-    <li class="app-sidebar__item">
-      <a href="#" class="app-sidebar__link">
-        <span class="icon icon-leading"><i class="fas fa-smile"></i></span>
-        <span class="app-sidebar__link__text">Gestão de Pessoas</span>
-        <span class="icon icon-trailing">
-          <span class="icon-trailing__item-status">
-            <i class="fas fa-chevron-down"></i>
+      <li class="app-sidebar__item">
+        <a href="#" class="app-sidebar__link">
+          <span class="icon icon-leading"><i class="fas fa-smile"></i></span>
+          <span class="app-sidebar__link__text">Gestão de Pessoas</span>
+          <span class="icon icon-trailing">
+            <span class="icon-trailing__item-status">
+              <i class="fas fa-chevron-down"></i>
+            </span>
           </span>
-        </span>
-      </a>
-    </li>
+        </a>
+      </li>
 
-    <li class="app-sidebar__item">
-      <a href="#" class="app-sidebar__link">
-        <span class="icon icon-leading"><i class="fas fa-money-check-alt"></i></span>
-        <span class="app-sidebar__link__text">Indenizações</span>
-        <span class="icon icon-trailing">
-          <span class="icon-trailing__item-status">
-            <i class="fas fa-chevron-down"></i>
+      <li class="app-sidebar__item">
+        <a href="#" class="app-sidebar__link">
+          <span class="icon icon-leading"><i class="fas fa-money-check-alt"></i></span>
+          <span class="app-sidebar__link__text">Indenizações</span>
+          <span class="icon icon-trailing">
+            <span class="icon-trailing__item-status">
+              <i class="fas fa-chevron-down"></i>
+            </span>
           </span>
-        </span>
-      </a>
-    </li>
+        </a>
+      </li>
 
-    <li class="app-sidebar__item">
-      <a href="#" class="app-sidebar__link">
-        <span class="icon icon-leading"><i class="fas fa-cogs"></i></span>
-        <span class="app-sidebar__link__text">Painel de Controle</span>
-        <span class="icon icon-trailing">
-          <span class="icon-trailing__item-status">
-            <i class="fas fa-chevron-down"></i>
+      <li class="app-sidebar__item">
+        <a href="#" class="app-sidebar__link">
+          <span class="icon icon-leading"><i class="fas fa-cogs"></i></span>
+          <span class="app-sidebar__link__text">Painel de Controle</span>
+          <span class="icon icon-trailing">
+            <span class="icon-trailing__item-status">
+              <i class="fas fa-chevron-down"></i>
+            </span>
           </span>
-        </span>
-      </a>
-    </li>
+        </a>
+      </li>
 
-    <li class="app-sidebar__item">
-      <a href="#" class="app-sidebar__link">
-        <span class="icon icon-leading"><i class="fas fa-id-card-alt"></i></span>
-        <span class="app-sidebar__link__text">Portal do Servidor</span>
-        <span class="icon icon-trailing">
-          <span class="icon-trailing__item-status">
-            <i class="fas fa-chevron-down"></i>
+      <li class="app-sidebar__item">
+        <a href="#" class="app-sidebar__link">
+          <span class="icon icon-leading"><i class="fas fa-id-card-alt"></i></span>
+          <span class="app-sidebar__link__text">Portal do Servidor</span>
+          <span class="icon icon-trailing">
+            <span class="icon-trailing__item-status">
+              <i class="fas fa-chevron-down"></i>
+            </span>
           </span>
-        </span>
-      </a>
-    </li>
+        </a>
+      </li>
 
-    <li class="app-sidebar__item">
-      <a href="#" class="app-sidebar__link">
-        <span class="icon icon-leading"><i class="fas fa-users"></i></span>
-        <span class="app-sidebar__link__text">Recursos Humanos</span>
-        <span class="icon icon-trailing">
-          <span class="icon-trailing__item-status">
-            <i class="fas fa-chevron-down"></i>
+      <li class="app-sidebar__item">
+        <a href="#" class="app-sidebar__link">
+          <span class="icon icon-leading"><i class="fas fa-users"></i></span>
+          <span class="app-sidebar__link__text">Recursos Humanos</span>
+          <span class="icon icon-trailing">
+            <span class="icon-trailing__item-status">
+              <i class="fas fa-chevron-down"></i>
+            </span>
           </span>
-        </span>
-      </a>
-    </li>
+        </a>
+      </li>
+    </ul>
 
     <div class="app-sidebar__footer">
       <li class="app-sidebar__divider"></li>
@@ -356,11 +358,6 @@
           <a href="#" class="app-sidebar__link">
             <span class="icon icon-leading"><i class="fas fa-cog"></i></span>
             <span class="app-sidebar__link__text">Ajustes</span>
-            <span class="icon icon-trailing">
-              <span class="icon-trailing__item-status">
-                <i class="fas fa-chevron-down"></i>
-              </span>
-            </span>
           </a>
         </li>
 
@@ -368,11 +365,6 @@
           <a href="#" class="app-sidebar__link">
             <span class="icon icon-leading"><i class="fas fa-question-circle"></i></span>
             <span class="app-sidebar__link__text">Ajuda</span>
-            <span class="icon icon-trailing">
-              <span class="icon-trailing__item-status">
-                <i class="fas fa-chevron-down"></i>
-              </span>
-            </span>
           </a>
         </li>
 
@@ -385,7 +377,7 @@
         </li>
       </ul>
     </div>
-  </ul>
+  </div>
 </template>
 
 <script>
@@ -395,12 +387,10 @@ export default {
   created() {
     const observer = new ResizeObserver(entries => {
       for (const entry of entries) {
-        console.log(entry.contentRect.width)
-
         if (entry.contentRect.width === 45) {
-          document.body.classList.add('app-sidebar--overflow')
+          document.body.classList.add('app-sidebar__nav--overflow')
         } else if (entry.contentRect.width === 76) {
-          document.body.classList.remove('app-sidebar--overflow')
+          document.body.classList.remove('app-sidebar__nav--overflow')
         }
       }
     })
@@ -420,7 +410,7 @@ export default {
       document.body.classList.toggle('app-sidebar--shrink')
     })
 
-    const appSubnavs = document.querySelectorAll('.app-subnav')
+    const appSubnavs = document.querySelectorAll('.app-sidebar__subnav')
     appSubnavs.forEach(appSubnav => {
       const appSidebarItem = appSubnav.closest('.app-sidebar__item')
       const appSidebarLink = appSidebarItem.querySelector('.app-sidebar__link')
@@ -436,35 +426,40 @@ export default {
       })
     })
 
-    this.observer.observe(this.$refs['app-sidebar'])
+    this.observer.observe(this.$refs['app-sidebar__nav'])
   },
 }
 </script>
 
 <style lang="scss">
+$debug: false;
+$debug-color: coral;
+
 :root {
-  --app-sidebar-background-color: #112cd3;
+  --app-sidebar-bg-color: #112cd3;
+  --app-sidebar-nav-text-color: white;
   --app-sidebar-width: 80%;
   --app-sidebar-icon-font-size: 1.2rem;
   --app-sidebar-icon-width: 2rem;
-  --app-sidebar-divider-color: rgba(44, 44, 44, .45);
-  --app-sidebar-transition-timing: .4s;
+  --app-sidebar-divider-color: rgba(255, 255, 255, .25);
+  --app-transition-timing: .4s;
+  --app-sidebar-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .app-sidebar {
-  background-color: var(--app-sidebar-background-color, #112cd3);
-  // border: 1px solid coral; // debug
+  @if $debug { border: 1px solid $debug-color; }
+
+  background-color: var(--app-sidebar-bg-color, #112cd3);
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
-  transition: var(--app-sidebar-transition-timing, -4s) cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: var(--app-transition-timing, -4s) var(--app-sidebar-transition-timing-function, ease);
   transform: translateX(-100%);
   box-shadow: 0 1px 1px rgba(0,0,0,0.15),
               0 2px 2px rgba(0,0,0,0.15),
               0 4px 4px rgba(0,0,0,0.15),
               0 8px 8px rgba(0,0,0,0.15);
-  overflow: auto;
   width: var(--app-sidebar-width);
 }
 
@@ -474,6 +469,10 @@ export default {
 
 .app-sidebar--shrink .app-sidebar {
   width: calc(1rem + var(--app-sidebar-icon-width) + .75rem);
+
+  &__link__text {
+    opacity: 0;
+  }
 
   .app-sidebar__header {
     position: relative;
@@ -494,6 +493,9 @@ export default {
 }
 
 .app-sidebar {
+  display: flex;
+  flex-direction: column;
+
   &__header {
     border-bottom: 1px solid var(--app-sidebar-divider-color);
     display: flex;
@@ -501,9 +503,9 @@ export default {
     padding: 1.65rem 1rem;
 
     .icon-leading {
-      background-color: white;
+      background-color: var(--app-sidebar-nav-text-color, white);
       border-radius: 555%;
-      color: var(--app-sidebar-background-color, #112cd3);
+      color: var(--app-sidebar-bg-color, #112cd3);
       display: inline-flex;
       font-size: var(--app-sidebar-icon-font-size);
       justify-content: center;
@@ -514,13 +516,13 @@ export default {
     }
 
     &__title {
-      color: white;
+      color: var(--app-sidebar-nav-text-color, white);
       font-size: 1.25rem;
       white-space: nowrap;
     }
 
     .app-sidebar__hide {
-      color: white;
+      color: var(--app-sidebar-nav-text-color, white);
       margin-left: auto;
       display: inline-block;
       font-size: 1.15rem;
@@ -532,24 +534,31 @@ export default {
     }
   }
 
+  &__nav {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
   &__item {
     display: block;
   }
 
   &__link {
-    color: white;
+    color: var(--app-sidebar-nav-text-color, white);
     display: flex;
     align-items: center;
     padding: .85rem 1rem;
     text-decoration: none;
-    transition: var(--app-sidebar-transition-timing);
+    transition: var(--app-transition-timing);
 
     > * {
       flex: 0 0 auto;
     }
 
     .icon-leading {
-      // border: 1px solid coral; // debug
+      @if $debug { border: 1px solid $debug-color; }
+
       display: inline-block;
       text-align: center;
       margin-right: .75rem;
@@ -578,7 +587,7 @@ export default {
 
     .icon-trailing__item-status {
       font-size: .9em;
-      transition: var(--app-sidebar-transition-timing);
+      transition: var(--app-transition-timing);
     }
   }
 
@@ -598,15 +607,15 @@ export default {
   }
 }
 
-.app-sidebar .app-subnav {
+.app-sidebar__subnav {
   border-left: 5px solid #040609;
   max-height: 0;
   overflow: hidden;
-  transition: var(--app-sidebar-transition-timing);
+  transition: var(--app-transition-timing);
 }
 
 .app-sidebar .app-sidebar__item--expand {
-  > .app-subnav {
+  > .app-sidebar__subnav {
     max-height: 100vh;
   }
 
@@ -639,12 +648,8 @@ export default {
       transform: translateX(-100%);
     }
   }
-
-  .app-sidebar--shrink .app-sidebar {
-    overflow-x: hidden;
-  }
   
-  .app-sidebar--shrink.app-sidebar--overflow .app-sidebar {
+  .app-sidebar--shrink.app-sidebar__nav--overflow .app-sidebar {
     width: calc(5rem - 4px);
   }
 }
