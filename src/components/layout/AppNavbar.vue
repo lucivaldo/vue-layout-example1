@@ -12,7 +12,7 @@
       <span class="app-navbar__app__name">App Name</span>
     </div>
 
-    <div class="notifications">
+    <div class="notifications notifications--has-notifications">
       <a href="#" class="notifications__toggler" ref="notifications__toggler">
         <span class="icon"><i class="fas fa-bell"></i></span>
       </a>
@@ -390,6 +390,7 @@ export default {
     text-decoration: none;
     margin: .1rem;
     cursor: pointer;
+    position: relative;
 
     .icon {
       background-color: rgba(200, 200, 200, .15);
@@ -401,11 +402,24 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
+    
+      &:hover {
+        color: #333;
+      }
     }
+  }
 
-    &:hover {
-      color: #333;
-    }
+  &--has-notifications &__toggler:after {
+    content: '';
+    display: block;
+    width: .75rem;
+    height: .75rem;
+    background-color: coral;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(20%, -20%);
   }
 }
 
