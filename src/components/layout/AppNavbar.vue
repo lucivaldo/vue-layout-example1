@@ -133,6 +133,7 @@ export default {
     display: flex;
     align-items: center;
     position: relative;
+    user-select: none;
 
     &__avatar {
       border: 3px solid rgba(10, 10, 10, .75);
