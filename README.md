@@ -11,7 +11,7 @@ Desktop:
 
 ![Desktop preview](https://github.com/lucivaldo/vue-layout-example1/blob/master/src/assets/images/layout1-desktop.gif)
 
-Movile:
+Mobile:
 
 ![Mobile preview](https://github.com/lucivaldo/vue-layout-example1/blob/master/src/assets/images/layout1-mobile.gif)
 
