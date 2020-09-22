@@ -1,5 +1,5 @@
 <template>
-  <ul class="app-sidebar">
+  <ul class="app-sidebar" ref="app-sidebar">
     <header class="app-sidebar__header">
       <span class="app-sidebar__header__icon icon-leading"><i class="fas fa-layer-group"></i></span>
       <span class="app-sidebar__header__title">App Name</span>
@@ -392,6 +392,22 @@
 export default {
   name: 'AppSidebar',
 
+  created() {
+    const observer = new ResizeObserver(entries => {
+      for (const entry of entries) {
+        console.log(entry.contentRect.width)
+
+        if (entry.contentRect.width === 45) {
+          document.body.classList.add('app-sidebar--overflow')
+        } else if (entry.contentRect.width === 76) {
+          document.body.classList.remove('app-sidebar--overflow')
+        }
+      }
+    })
+
+    this.observer = observer
+  },
+
   mounted() {
     const appSidebarToggle = this.$refs['app-sidebar__hide']
     appSidebarToggle.addEventListener('click', () => {
@@ -419,7 +435,9 @@ export default {
         appSidebarItem.classList.toggle('app-sidebar__item--expand')
       })
     })
-  }
+
+    this.observer.observe(this.$refs['app-sidebar'])
+  },
 }
 </script>
 
@@ -581,7 +599,7 @@ export default {
 }
 
 .app-sidebar .app-subnav {
-  border-left: .15rem solid tomato;
+  border-left: 5px solid #040609;
   max-height: 0;
   overflow: hidden;
   transition: var(--app-sidebar-transition-timing);
@@ -615,10 +633,6 @@ export default {
     transform: translateX(0);
   }
 
-  .app-sidebar .app-subnav {
-    border-left: .35rem solid #040609;
-  }
-
   .app-sidebar--hide-desktop {
     .app-sidebar {
       box-shadow: none;
@@ -628,6 +642,10 @@ export default {
 
   .app-sidebar--shrink .app-sidebar {
     overflow-x: hidden;
+  }
+  
+  .app-sidebar--shrink.app-sidebar--overflow .app-sidebar {
+    width: calc(5rem - 4px);
   }
 }
 </style>
