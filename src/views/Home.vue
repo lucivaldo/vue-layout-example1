@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div v-for="i in 50" :key="i">
+    <div v-for="i in 15" :key="i">
       <header>Title {{ i }}</header>
 
       <p>
@@ -21,5 +21,13 @@ header {
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: .5rem;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.home > div {
+  margin-bottom: 1.5rem;
 }
 </style>
