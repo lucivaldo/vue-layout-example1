@@ -481,11 +481,19 @@ export default {
       }
     }
   }
+
+  .app-sidebar--show.app-sidebar--shrink .app-navbar__app {
+    margin-left: 2rem;
+  }
 }
 
 @media screen and (min-width: 972px) {
   .app-sidebar--show .app-navbar__app {
-    margin-left: calc(var(--app-sidebar-width) - 1rem);
+    margin-left: calc(var(--app-sidebar-width) - 2rem);
+  }
+
+  .app-sidebar--show.app-sidebar--shrink .app-navbar__app {
+    margin-left: 2rem;
   }
 
   .app-sidebar--hide-desktop .app-navbar__app {
