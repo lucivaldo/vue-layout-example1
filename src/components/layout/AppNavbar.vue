@@ -12,8 +12,78 @@
       <span class="app-navbar__app__name">App Name</span>
     </div>
 
-    <div class="app-navbar__notifications">
-      <span class="icon"><i class="fas fa-bell"></i></span>
+    <div class="notifications">
+      <a href="#" class="notifications__toggler" ref="notifications__toggler">
+        <span class="icon"><i class="fas fa-bell"></i></span>
+      </a>
+
+      <div class="notifications__content">
+        <div class="notifications__header">
+          <span class="notifications__header__title">Notifications</span>
+          <a href="#" class="notifications__header__action">Mark all as read</a>
+        </div>
+
+        <div class="notifications__list">
+          <div class="notifications__list__item notifications__list__item--checked">
+            <div class="notifications__list__item__leading">
+              <span class="icon icon-checked">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+
+            <div class="notifications__list__item__content">
+              <span class="notifications__list__item__content__title">
+                <strong>Stephan Parker</strong> marked the task as done
+              </span>
+
+              <span class="notifications__list__item__content__time">a day ago</span>
+            </div>
+          </div>
+
+          <div class="notifications__list__item">
+            <div class="notifications__list__item__leading">
+            </div>
+
+            <div class="notifications__list__item__content">
+              <span class="notifications__list__item__content__title">
+                <strong>Steve O'Reilly</strong> answered to your comment on the Cash Flow Forecast's graph
+              </span>
+
+              <span class="notifications__list__item__content__time">a day ago</span>
+            </div>
+          </div>
+
+          <div class="notifications__list__item">
+            <div class="notifications__list__item__leading">
+            </div>
+
+            <div class="notifications__list__item__content">
+              <span class="notifications__list__item__content__title">
+                <strong>Sophie Welch</strong> mentionned you in her comment on Invoices
+              </span>
+
+              <span class="notifications__list__item__content__time">2 days ago</span>
+            </div>
+          </div>
+
+          <div class="notifications__list__item">
+            <div class="notifications__list__item__leading">
+            </div>
+
+            <div class="notifications__list__item__content">
+              <span class="notifications__list__item__content__title">
+                <strong>Sophie Welch</strong> mentionned you in her comment on Invoices
+              </span>
+
+              <span class="notifications__list__item__content__time">2 days ago</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="notifications__footer">
+          <a href="#" class="notifications__footer__action">View All</a>
+        </div>
+      </div>
     </div>
 
     <div class="app-navbar__user" ref="app-navbar__user">
@@ -69,6 +139,12 @@ export default {
       appNavBarUserActionsToggle.closest('.app-navbar__user')
         .classList.toggle('app-navbar__user--expand')
     })
+
+    const notificationsToggler = this.$refs['notifications__toggler']
+    notificationsToggler.addEventListener('click', () => {
+      notificationsToggler.closest('.notifications')
+        .classList.toggle('notifications--expand')
+    })
   }
 }
 </script>
@@ -104,29 +180,6 @@ export default {
 
   &__app {
     display: none;
-  }
-
-  &__notifications {
-    display: flex;
-    margin-left: auto;
-    margin-right: 1rem;
-
-    &__email, &__alerts {
-      background-color: rgba(200, 200, 200, .15);
-      border-radius: .5rem;
-      color: #6a6a6a;
-      width: 2rem;
-      height: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: .4rem;
-      cursor: pointer;
-
-      &:hover {
-        color: #333;
-      }
-    }
   }
 
   &__user {
@@ -225,6 +278,154 @@ export default {
       opacity: 1;
       visibility: visible;
       z-index: 1;
+    }
+  }
+}
+
+.notifications {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: .85rem;
+  position: relative;
+  height: 100%;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-top: 1px solid rgba(0, 0, 0, 0.11);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11),
+                0 2px 2px rgba(0, 0, 0, 0.11),
+                0 4px 4px rgba(0, 0, 0, 0.11);
+    position: fixed;
+    top: calc(var(--app-navbar-height) - 4px);
+    right: .5rem;
+    width: 21.25rem;
+    height: 80vh;
+    transition: var(--app-transition-timing);
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem .75rem;
+
+    &__title {
+      color: #999;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  &__list {
+    flex: 1;
+    padding: 0 .75rem;
+  }
+
+  &__footer {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: .75rem 1rem;
+    text-align: center;
+  }
+
+  &__header, &__footer {
+    &__action {
+      color: #2d57b3;
+      font-weight: 700;
+      text-decoration: none;
+    }
+  }
+
+  &__list {
+    overflow: auto;
+
+    &__item {
+      background-color: #fffaf0;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      margin-bottom: .25rem;
+      padding: 1rem;
+    }
+  }
+
+  &__list__item__leading {
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background-color: orange;
+    color: white;
+    margin-right: .75rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__list__item--checked &__list__item__leading {
+    background-color: #648b46;
+  }
+
+  &__list__item__content {
+    display: flex;
+    flex-direction: column;
+
+    &__title, &__time {
+      color: #888;
+    }
+
+    &__title {
+      strong {
+        color: #555;
+      }
+    }
+  }
+
+  &__toggler {
+    text-decoration: none;
+    margin: .1rem;
+    cursor: pointer;
+
+    .icon {
+      background-color: rgba(200, 200, 200, .15);
+      color: #6a6a6a;
+      display: inline-block;
+      border-radius: .5rem;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &:hover {
+      color: #333;
+    }
+  }
+}
+
+.notifications--expand .notifications__content {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (min-width: 360px) {
+  .notifications {
+    &__content {
+      width: 23.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .notifications {
+    &__content {
+      width: 30rem;
     }
   }
 }

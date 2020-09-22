@@ -436,6 +436,7 @@ $debug: false;
 $debug-color: coral;
 
 :root {
+  --app-primary-color: #112cd3;
   --app-sidebar-bg-color: #112cd3;
   --app-sidebar-nav-text-color: white;
   --app-sidebar-width: 80%;
