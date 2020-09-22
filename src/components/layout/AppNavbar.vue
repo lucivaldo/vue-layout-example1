@@ -335,9 +335,13 @@ export default {
 
   &__header, &__footer {
     &__action {
-      color: #2d57b3;
+      color: #2886C9;
       font-weight: 700;
       text-decoration: none;
+
+      &:hover {
+        color: #2d57b3;
+      }
     }
   }
 
