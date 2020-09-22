@@ -34,11 +34,6 @@
             <a href="#" class="app-sidebar__link">
               <span class="icon icon-leading"><i class="far fa-clipboard"></i></span>
               <span class="app-sidebar__link__text">Relatórios</span>
-              <span class="icon icon-trailing">
-                <span class="icon-trailing__item-status">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </span>
             </a>
           </li>
 
@@ -46,11 +41,6 @@
             <a href="#" class="app-sidebar__link">
               <span class="icon icon-leading"><i class="fas fa-sliders-h"></i></span>
               <span class="app-sidebar__link__text">Configurações</span>
-              <span class="icon icon-trailing">
-                <span class="icon-trailing__item-status">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </span>
             </a>
           </li>
 
@@ -58,11 +48,6 @@
             <a href="#" class="app-sidebar__link">
               <span class="icon icon-leading"><i class="fas fa-file-invoice-dollar"></i></span>
               <span class="app-sidebar__link__text">Gestor de Solicitações</span>
-              <span class="icon icon-trailing">
-                <span class="icon-trailing__item-status">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </span>
             </a>
           </li>
 
@@ -70,11 +55,6 @@
             <a href="#" class="app-sidebar__link">
               <span class="icon icon-leading"><i class="fas fa-list-ol"></i></span>
               <span class="app-sidebar__link__text">Gestão Almoxarifado</span>
-              <span class="icon icon-trailing">
-                <span class="icon-trailing__item-status">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </span>
             </a>
           </li>
 
@@ -82,11 +62,6 @@
             <a href="#" class="app-sidebar__link">
               <span class="icon icon-leading"><i class="far fa-money-bill-alt"></i></span>
               <span class="app-sidebar__link__text">Grupo Espécie</span>
-              <span class="icon icon-trailing">
-                <span class="icon-trailing__item-status">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </span>
             </a>
           </li>
 
@@ -94,11 +69,6 @@
             <a href="#" class="app-sidebar__link">
               <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
               <span class="app-sidebar__link__text">Solicitação</span>
-              <span class="icon icon-trailing">
-                <span class="icon-trailing__item-status">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </span>
             </a>
           </li>
         </ul>
@@ -123,11 +93,6 @@
             <a href="#" class="app-sidebar__link">
               <span class="icon icon-leading"><i class="far fa-clipboard"></i></span>
               <span class="app-sidebar__link__text">Relatórios</span>
-              <span class="icon icon-trailing">
-                <span class="icon-trailing__item-status">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </span>
             </a>
           </li>
 
@@ -135,11 +100,6 @@
             <a href="#" class="app-sidebar__link">
               <span class="icon icon-leading"><i class="fas fa-sliders-h"></i></span>
               <span class="app-sidebar__link__text">Avaliação Patrimonial</span>
-              <span class="icon icon-trailing">
-                <span class="icon-trailing__item-status">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </span>
             </a>
           </li>
 
@@ -147,11 +107,6 @@
             <a href="#" class="app-sidebar__link">
               <span class="icon icon-leading"><i class="fas fa-file-invoice-dollar"></i></span>
               <span class="app-sidebar__link__text">Configurações</span>
-              <span class="icon icon-trailing">
-                <span class="icon-trailing__item-status">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </span>
             </a>
           </li>
 
@@ -159,11 +114,6 @@
             <a href="#" class="app-sidebar__link">
               <span class="icon icon-leading"><i class="fas fa-list-ol"></i></span>
               <span class="app-sidebar__link__text">Contas Patrimoniais</span>
-              <span class="icon icon-trailing">
-                <span class="icon-trailing__item-status">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </span>
             </a>
           </li>
 
@@ -171,11 +121,6 @@
             <a href="#" class="app-sidebar__link">
               <span class="icon icon-leading"><i class="far fa-money-bill-alt"></i></span>
               <span class="app-sidebar__link__text">Gestor de Inventários</span>
-              <span class="icon icon-trailing">
-                <span class="icon-trailing__item-status">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </span>
             </a>
           </li>
 
@@ -183,11 +128,6 @@
             <a href="#" class="app-sidebar__link">
               <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
               <span class="app-sidebar__link__text">Gestão Patrimonial</span>
-              <span class="icon icon-trailing">
-                <span class="icon-trailing__item-status">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </span>
             </a>
           </li>
 
@@ -195,11 +135,6 @@
             <a href="#" class="app-sidebar__link">
               <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
               <span class="app-sidebar__link__text">Grupo Espécie</span>
-              <span class="icon icon-trailing">
-                <span class="icon-trailing__item-status">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </span>
             </a>
           </li>
 
@@ -207,11 +142,6 @@
             <a href="#" class="app-sidebar__link">
               <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
               <span class="app-sidebar__link__text">Localizações Patrimoniais</span>
-              <span class="icon icon-trailing">
-                <span class="icon-trailing__item-status">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </span>
             </a>
           </li>
 
@@ -219,11 +149,6 @@
             <a href="#" class="app-sidebar__link">
               <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
               <span class="app-sidebar__link__text">Sequência Patrimonial</span>
-              <span class="icon icon-trailing">
-                <span class="icon-trailing__item-status">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </span>
             </a>
           </li>
 
@@ -231,11 +156,6 @@
             <a href="#" class="app-sidebar__link">
               <span class="icon icon-leading"><i class="fas fa-globe-americas"></i></span>
               <span class="app-sidebar__link__text">Tabela de Avaliação</span>
-              <span class="icon icon-trailing">
-                <span class="icon-trailing__item-status">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </span>
             </a>
           </li>
         </ul>
