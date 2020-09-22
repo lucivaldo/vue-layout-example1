@@ -1,4 +1,4 @@
-# vue-layout-example1
+# Dashboard layout 1
 
 Exemplo de layout de uma aplicação com sidebar e navbar totalmente responsivo.
 
