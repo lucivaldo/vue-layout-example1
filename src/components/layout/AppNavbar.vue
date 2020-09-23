@@ -174,6 +174,7 @@ export default {
       const initialColors = {
         bodyBg: getStyle(root, '--body-bg'),
         appNavbarBg: getStyle(root, '--app-navbar-bg'),
+
         appNavbar: getStyle(root, '--app-navbar'),
         appNavbarUserName: getStyle(root, '--app-navbar-user-name'),
         appNavbarUserNameHover: getStyle(root, '--app-navbar-user-name-hover'),
@@ -223,6 +224,7 @@ export default {
         bodyBg: '#333',
         appNavbar: 'white',
         appNavbarBg: '#333',
+
         appNavbarUserName: 'white',
         appNavbarUserNameHover: 'white',
         appNavbarUserRole: 'white',
@@ -291,13 +293,19 @@ export default {
 :root {
   --app-navbar: #555;
   --app-navbar-bg: #fff;
+
+  --app-theme-toggler-bg: #ccc;
+  --app-theme-toggler-bg-hover: #afafaf;
+  --app-theme-toggler-bg-checked: #2196f3;
+  --app-theme-toggler-bg-checked-hover: #1e85d9;
+  --app-theme-toggler-indicator: white;
+
   --app-navbar-user-name: #555;
   --app-navbar-user-name-hover: #333;
   --app-navbar-user-role: #626262;
   --app-navbar-user-role-hover: #444;
   --app-navbar-user-toggler: #6a6a6a;
   --app-navbar-user-toggler-hover: #333;
-
   --app-navbar-user-actions-bg: white;
   --app-navbar-user-actions-box-shadow: rgba(0, 0, 0, 0.11);
   --app-navbar-user-actions-item-bg: white;
@@ -490,7 +498,7 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: var(--app-theme-toggler-bg);
     transition: var(--app-transition-timing);
 
     &:before {
@@ -500,17 +508,25 @@ export default {
       width: var(--app-theme-toggler-indicator-size);
       left: calc((var(--app-theme-toggler-height) - var(--app-theme-toggler-indicator-size)) / 2);
       bottom: calc((var(--app-theme-toggler-height) - var(--app-theme-toggler-indicator-size)) / 2);
-      background-color: white;
+      background-color: var(--app-theme-toggler-indicator);
       transition: var(--app-transition-timing);
     }
   }
 
+  &:hover input:not(:checked) + &__slider {
+    background-color: var(--app-theme-toggler-bg-hover);
+  }
+  
+  &:hover input:checked + &__slider {
+    background-color: var(--app-theme-toggler-bg-checked-hover);
+  }
+
   input:checked + &__slider {
-    background-color: #2196f3;
+    background-color: var(--app-theme-toggler-bg-checked);
   }
 
   input:focus + &__slider {
-    box-shadow: 0 0 1px #2196f3;
+    box-shadow: 0 0 1px var(--app-theme-toggler-bg-checked);
   }
 
   input:checked + &__slider:before {
