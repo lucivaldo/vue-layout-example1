@@ -177,6 +177,7 @@ export default {
         appNavbarBg: getStyle(root, '--app-navbar-bg'),
 
         appNavbar: getStyle(root, '--app-navbar'),
+        appNavbarUserAvatar: getStyle(root, '--app-navbar-user-avatar'),
         appNavbarUserName: getStyle(root, '--app-navbar-user-name'),
         appNavbarUserNameHover: getStyle(root, '--app-navbar-user-name-hover'),
         appNavbarUserRole: getStyle(root, '--app-navbar-user-role'),
@@ -226,6 +227,7 @@ export default {
         appNavbar: 'white',
         appNavbarBg: '#333',
 
+        appNavbarUserAvatar: 'white',
         appNavbarUserName: 'white',
         appNavbarUserNameHover: 'white',
         appNavbarUserRole: 'white',
@@ -324,6 +326,7 @@ export default {
   --app-theme-toggler-bg-checked-hover: #1e85d9;
   --app-theme-toggler-indicator: white;
 
+  --app-navbar-user-avatar: rgba(10, 10, 10, .75);
   --app-navbar-user-name: #555;
   --app-navbar-user-name-hover: #333;
   --app-navbar-user-role: #626262;
@@ -401,12 +404,13 @@ export default {
     user-select: none;
 
     &__avatar {
-      border: 3px solid rgba(10, 10, 10, .75);
+      border: 3px solid var(--app-navbar-user-avatar);
       border-radius: 50%;
       flex: 0 0 auto;
       width: 3rem;
       height: 3rem;
       margin: 0 .5rem;
+      transition: border var(--app-transition-timing);
       overflow: hidden;
 
       &:hover {
