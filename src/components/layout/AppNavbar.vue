@@ -105,7 +105,7 @@
         <span class="app-navbar__user__role">Desenvolvedor</span>
       </div>
 
-      <div class="app-navbar__user__toggle-actions" ref="app-navbar__user__toggle-actions">
+      <div class="app-navbar__user__toggler" ref="app-navbar__user__toggler">
         <span class="icon"><i class="fas fa-ellipsis-v"></i></span>
       </div>
 
@@ -143,9 +143,9 @@ export default {
       }
     })
 
-    const appNavBarUserActionsToggle = this.$refs['app-navbar__user__toggle-actions']
-    appNavBarUserActionsToggle.addEventListener('click', () => {
-      appNavBarUserActionsToggle.closest('.app-navbar__user')
+    const appNavBarUserToggler = this.$refs['app-navbar__user__toggler']
+    appNavBarUserToggler.addEventListener('click', () => {
+      appNavBarUserToggler.closest('.app-navbar__user')
         .classList.toggle('app-navbar__user--expand')
     })
 
@@ -183,8 +183,8 @@ export default {
         appNavbarUserNameHover: getStyle(root, '--app-navbar-user-name-hover'),
         appNavbarUserRole: getStyle(root, '--app-navbar-user-role'),
         appNavbarUserRoleHover: getStyle(root, '--app-navbar-user-role-hover'),
-        appNavbarUserToggleActions: getStyle(root, '--app-navbar-user-toggle-actions'),
-        appNavbarUserToggleActionsHover: getStyle(root, '--app-navbar-user-toggle-actions-hover'),
+        appNavbarUserToggleActions: getStyle(root, '--app-navbar-user-toggler'),
+        appNavbarUserToggleActionsHover: getStyle(root, '--app-navbar-user-toggler-hover'),
 
         notificationsBg: getStyle(root, '--notifications-bg'),
         notificationsBoxShadow: getStyle(root, '--notifications-box-shadow'),
@@ -299,8 +299,8 @@ export default {
   --app-navbar-user-name-hover: #333;
   --app-navbar-user-role: #626262;
   --app-navbar-user-role-hover: #444;
-  --app-navbar-user-toggle-actions: #6a6a6a;
-  --app-navbar-user-toggle-actions-hover: #333;
+  --app-navbar-user-toggler: #6a6a6a;
+  --app-navbar-user-toggler-hover: #333;
 
   --app-navbar-user-actions-bg: white;
   --app-navbar-user-actions-box-shadow: rgba(0, 0, 0, 0.11);
@@ -413,12 +413,12 @@ export default {
       }
     }
 
-    &__toggle-actions .icon {
-      color: var(--app-navbar-user-toggle-actions);
+    &__toggler .icon {
+      color: var(--app-navbar-user-toggler);
       padding: .5rem;
 
       &:hover {
-        color: var(--app-navbar-user-toggle-actions-hover);
+        color: var(--app-navbar-user-toggler-hover);
         cursor: pointer;
       }
     }
