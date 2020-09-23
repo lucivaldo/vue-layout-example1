@@ -29,8 +29,8 @@ export default {
   --main-bg: white;
   --main-text: #333;
 
-  --headings-text: var(--main-text);
-  --headings-text-hover: #000;
+  --heading-text: var(--main-text);
+  --heading-text-hover: #000;
 }
 
 body {

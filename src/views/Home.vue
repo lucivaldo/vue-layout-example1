@@ -18,13 +18,13 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  color: var(--headings-text);
+  color: var(--heading-text);
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: .5rem;
 
   &:hover {
-    color: var(--headings-text-hover);
+    color: var(--heading-text-hover);
   }
 }
 

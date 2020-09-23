@@ -178,7 +178,7 @@ export default {
       const initialColors = {
         bodyBg: getStyle(root, '--body-bg'),
         appNavbarBg: getStyle(root, '--app-navbar-bg'),
-        appNavbarText: getStyle(root, '--app-navbar-text'),
+        appNavbar: getStyle(root, '--app-navbar'),
         appNavbarUserName: getStyle(root, '--app-navbar-user-name'),
         appNavbarUserNameHover: getStyle(root, '--app-navbar-user-name-hover'),
         appNavbarUserRole: getStyle(root, '--app-navbar-user-role'),
@@ -193,17 +193,17 @@ export default {
         notificationsActionLink: getStyle(root, '--notifications-action-link'),
         notificationsActionLinkHover: getStyle(root, '--notifications-action-link-hover'),
         notificationsListItemBg: getStyle(root, '--notifications-list-item-bg'),
+        notificationsListItemLeading: getStyle(root, '--notifications-list-item-leading'),
         notificationsListItemLeadingBg: getStyle(root, '--notifications-list-item-leading-bg'),
-        notificationsListItemLeadingText: getStyle(root, '--notifications-list-item-leading-text'),
+        notificationsListItemLeadingChecked: getStyle(root, '--notifications-list-item-leading-checked'),
         notificationsListItemLeadingCheckedBg: getStyle(root, '--notifications-list-item-leading-checked-bg'),
-        notificationsListItemLeadingCheckedText: getStyle(root, '--notifications-list-item-leading-checked-text'),
         notificationsListItemContentTitle: getStyle(root, '--notifications-list-item-content-title'),
         notificationsListItemContentTime: getStyle(root, '--notifications-list-item-content-time'),
         notificationsListItemContentTitleStrong: getStyle(root, '--notifications-list-item-content-title-strong'),
-        notificationsTogglerIconBg: getStyle(root, '--notifications-toggler-icon-bg'),
         notificationsTogglerIcon: getStyle(root, '--notifications-toggler-icon'),
-        notificationsTogglerIconBgHover: getStyle(root, '--notifications-toggler-icon-bg-hover'),
         notificationsTogglerIconHover: getStyle(root, '--notifications-toggler-icon-hover'),
+        notificationsTogglerIconBg: getStyle(root, '--notifications-toggler-icon-bg'),
+        notificationsTogglerIconBgHover: getStyle(root, '--notifications-toggler-icon-bg-hover'),
         notificationsHasNotificationsTogglerIndicatorBg: getStyle(root, '--notifications-has-notifications-toggler-indicator-bg'),
 
         appNavbarUserActionsBg: getStyle(root, '--app-navbar-user-actions-bg'),
@@ -219,14 +219,14 @@ export default {
         mainBg: getStyle(root, '--main-bg'),
         mainText: getStyle(root, '--main-text'),
 
-        headingsText: getStyle(root, '--headings-text'),
-        headingsTextHover: getStyle(root, '--headings-text-hover'),
+        headingText: getStyle(root, '--headings-text'),
+        headingTextHover: getStyle(root, '--headings-text-hover'),
       }
 
       const darkMode = {
         bodyBg: '#333',
+        appNavbar: 'white',
         appNavbarBg: '#333',
-        appNavbarText: 'white',
         appNavbarUserName: 'white',
         appNavbarUserNameHover: 'white',
         appNavbarUserRole: 'white',
@@ -241,25 +241,25 @@ export default {
         // notificationsActionLink: '',
         // notificationsActionLinkHover: '',
         notificationsListItemBg: '#444',
+        // notificationsListItemLeading: '',
         // notificationsListItemLeadingBg: '',
-        // notificationsListItemLeadingText: '',
+        // notificationsListItemLeadingChecked: '',
         // notificationsListItemLeadingCheckedBg: '',
-        // notificationsListItemLeadingCheckedText: '',
         notificationsListItemContentTitle: 'white',
         notificationsListItemContentTime: 'white',
         notificationsListItemContentTitleStrong: '#efefef',
-        // notificationsTogglerIconBg: '',
         // notificationsTogglerIcon: '',
-        // notificationsTogglerIconBgHover: '',
         // notificationsTogglerIconHover: '',
+        // notificationsTogglerIconBg: '',
+        // notificationsTogglerIconBgHover: '',
         // notificationsHasNotificationsTogglerIndicatorBg: '',
 
         appNavbarUserActionsBg: '#333',
         appNavbarUserActionsBoxShadow: 'rgba(200, 200, 200, .85)',
-        appNavbarUserActionsItemBg: '#333',
-        appNavbarUserActionsItemBgHover: '#111',
         appNavbarUserActionsItem: 'white',
         appNavbarUserActionsItemHover: 'white',
+        appNavbarUserActionsItemBg: '#333',
+        appNavbarUserActionsItemBgHover: '#111',
 
         appSidebarBg: '#333',
         appSidebarDivider: '#dedede',
@@ -267,8 +267,8 @@ export default {
         mainBg: '#333',
         mainText: 'white',
 
-        headingsText: 'white',
-        headingsTextHover: 'white',
+        headingText: 'white',
+        headingTextHover: 'white',
       }
 
       const transformKey = key => {
@@ -293,8 +293,8 @@ export default {
 
 <style lang="scss">
 :root {
+  --app-navbar: #555;
   --app-navbar-bg: #fff;
-  --app-navbar-text: #555;
   --app-navbar-user-name: #555;
   --app-navbar-user-name-hover: #333;
   --app-navbar-user-role: #626262;
@@ -316,17 +316,17 @@ export default {
   --notifications-action-link: #2886C9;
   --notifications-action-link-hover: #2d57b3;
   --notifications-list-item-bg: #fffaf0;
+  --notifications-list-item-leading: white;
   --notifications-list-item-leading-bg: orange;
-  --notifications-list-item-leading-text: white;
+  --notifications-list-item-leading-checked: white;
   --notifications-list-item-leading-checked-bg: #648b46;
-  --notifications-list-item-leading-checked-text: white;
   --notifications-list-item-content-title: #888;
   --notifications-list-item-content-time: #888;
   --notifications-list-item-content-title-strong: #555;
-  --notifications-toggler-icon-bg: rgba(200, 200, 200, .15);
   --notifications-toggler-icon: #6a6a6a;
-  --notifications-toggler-icon-bg-hover: rgba(100, 100, 100, .15);
   --notifications-toggler-icon-hover: #333;
+  --notifications-toggler-icon-bg: rgba(200, 200, 200, .15);
+  --notifications-toggler-icon-bg-hover: rgba(100, 100, 100, .15);
   --notifications-has-notifications-toggler-indicator-bg: tomato;
 
   --app-navbar-height: 3.75rem;
@@ -347,7 +347,7 @@ export default {
   width: 100%;
 
   .app-sidebar__show {
-    color: var(--app-navbar-text);
+    color: var(--app-navbar);
     display: inline-block;
     font-size: 1.15rem;
     padding: .15rem .65rem;
@@ -358,7 +358,7 @@ export default {
   }
 
   &__app {
-    color: var(--app-navbar-text);
+    color: var(--app-navbar);
     display: none;
   }
 
@@ -596,7 +596,7 @@ export default {
     flex: 0 0 auto;
     border-radius: 50%;
     background-color: orange;
-    color: var(--notifications-list-item-leading-text);
+    color: var(--notifications-list-item-leading);
     margin-right: .75rem;
     width: 3rem;
     height: 3rem;
@@ -607,7 +607,7 @@ export default {
 
   &__list__item--checked &__list__item__leading {
     background-color: var(--notifications-list-item-leading-checked-bg);
-    color: var(--notifications-list-item-leading-checked-text);
+    color: var(--notifications-list-item-leading-checked);
   }
 
   &__list__item__content {
