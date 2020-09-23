@@ -325,7 +325,8 @@ export default {
   --notifications-toggler-icon-bg-hover: rgba(100, 100, 100, .15);
   --notifications-has-notifications-toggler-indicator-bg: tomato;
 
-  --app-navbar-height: 3.75rem;
+  // --app-navbar-height: 3.75rem;
+  --app-navbar-height: 4.5rem;
 }
 
 .app-navbar {
@@ -363,12 +364,14 @@ export default {
   &__user {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     position: relative;
     user-select: none;
 
     &__avatar {
       border: 3px solid rgba(10, 10, 10, .75);
       border-radius: 50%;
+      flex: 0 0 auto;
       width: 3rem;
       height: 3rem;
       margin: 0 .5rem;
@@ -691,6 +694,12 @@ export default {
     &__content {
       width: 30rem;
     }
+  }
+}
+
+@media screen and (max-width: 529px) {
+  .app-theme-toggler {
+    margin-left: auto;
   }
 }
 
