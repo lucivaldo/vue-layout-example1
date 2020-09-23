@@ -12,7 +12,7 @@
       <span class="app-navbar__app__name">App Name</span>
     </div>
 
-    <label class="app-theme-toggler">
+    <label class="app-theme-toggler" ref="app-theme-toggler">
       <input type="checkbox" id="app-theme-toggler__toggler" ref="app-theme-toggler__toggler">
       <span class="app-theme-toggler__slider app-theme-toggler__slider--rounded"></span>
     </label>
@@ -131,10 +131,11 @@ export default {
       document.body.classList.add('app-sidebar--show')
       document.body.classList.remove('app-sidebar--hide-desktop')
     })
+    const themeToggler = this.$refs['app-theme-toggler']
 
     const appNavbarUser = this.$refs['app-navbar__user']
-    document.addEventListener('click', event => {
-      if (!appNavbarUser.contains(event.target)) {
+    document.addEventListener('click', ({ target }) => {
+      if (!appNavbarUser.contains(target) && !themeToggler.contains(target)) {
         appNavbarUser.classList.remove('app-navbar__user--expand')
       }
     })
@@ -152,8 +153,8 @@ export default {
     })
 
     const notifications = this.$refs.notifications
-    document.addEventListener('click', (event) => {
-      if (!notifications.contains(event.target)) {
+    document.addEventListener('click', ({ target }) => {
+      if (!notifications.contains(target) && !themeToggler.contains(target)) {
         notifications.classList.remove('notifications--expand')
       }
     })
