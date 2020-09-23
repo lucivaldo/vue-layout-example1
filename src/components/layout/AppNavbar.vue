@@ -12,14 +12,10 @@
       <span class="app-navbar__app__name">App Name</span>
     </div>
 
-    <div class="app-theme-toggle">
-      <input type="checkbox"
-        class="app-theme-toggle__toggler"
-        id="app-theme-toggle__toggler"
-        ref="app-theme-toggle__toggler"
-        >
-      <label for="app-theme-toggle__toggler"></label>
-    </div>
+    <label class="app-theme-toggler">
+      <input type="checkbox" id="app-theme-toggler__toggler" ref="app-theme-toggler__toggler">
+      <span class="app-theme-toggler__slider app-theme-toggler__slider--rounded"></span>
+    </label>
 
     <div class="notifications notifications--has-notifications" ref="notifications">
       <a href="#" class="notifications__toggler" ref="notifications__toggler">
@@ -281,7 +277,7 @@ export default {
         })
       }
 
-      const themeToggler = this.$refs['app-theme-toggle__toggler']
+      const themeToggler = this.$refs['app-theme-toggler__toggler']
       themeToggler.addEventListener('click', () => {
         const checked = themeToggler.checked
         checked ? changeColors(darkMode) : changeColors(initialColors)
@@ -339,6 +335,7 @@ export default {
               0 4px 4px rgba(0, 0, 0, 0.11);
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   height: var(--app-navbar-height);
   padding: .5rem;
   position: fixed;
@@ -360,6 +357,7 @@ export default {
   &__app {
     color: var(--app-navbar);
     display: none;
+    margin-right: auto;
   }
 
   &__user {
@@ -463,57 +461,66 @@ export default {
   }
 }
 
-.app-theme-toggle {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
+.app-theme-toggler {
+  font-size: .8125rem; // 13px
+
+  --app-theme-toggler-width: 3.75em; // 60px
+  --app-theme-toggler-height: 2.125em; // 34px
+  --app-theme-toggler-indicator-size: 1.625em; // 26px
+
   position: relative;
+  display: inline-block;
+  margin: 0 1rem;
+  width: var(--app-theme-toggler-width);
+  height: var(--app-theme-toggler-height);
 
   input {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
     opacity: 0;
-    z-index: -1;
+    width: 0;
+    height: 0;
   }
 
-  label {
-    background-color: #c4cad7;
-    display: inline-block;
-    width: 2.8rem;
-    height: 1.55rem;
-    border-radius: .75rem;
-    margin: 0 1rem;
-    position: relative;
-    box-shadow: 1px 1px 1px rgba(100, 100, 100, 0.5);
-  }
-
-  label:after {
-    content: '';
-    display: block;
-    width: 1.1rem;
-    height: 1.1rem;
-    background-color: white;
+  &__slider {
     position: absolute;
-    left: 0;
-    top: 0;
-    border-radius: 50%;
-    transform: translate(5px, 4px);
-    transition: var(--app-transition-timing);
-  }
-
-  label:hover {
-    background-color: #aea9b5;
     cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: var(--app-transition-timing);
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: var(--app-theme-toggler-indicator-size);
+      width: var(--app-theme-toggler-indicator-size);
+      left: calc((var(--app-theme-toggler-height) - var(--app-theme-toggler-indicator-size)) / 2);
+      bottom: calc((var(--app-theme-toggler-height) - var(--app-theme-toggler-indicator-size)) / 2);
+      background-color: white;
+      transition: var(--app-transition-timing);
+    }
   }
 
-  input:checked ~ label {
-    background-color: #453f2a;
+  input:checked + &__slider {
+    background-color: #2196f3;
+  }
 
-    &:after {
-      transform: translate(calc(100% + 4px), 4px);
-    }
+  input:focus + &__slider {
+    box-shadow: 0 0 1px #2196f3;
+  }
+
+  input:checked + &__slider:before {
+    transform: translateX(var(--app-theme-toggler-indicator-size));
+    transform: translateX(100%);
+  }
+
+  &__slider--rounded {
+    border-radius: var(--app-theme-toggler-height);
+  }
+
+  &__slider--rounded:before {
+    border-radius: 50%;
   }
 }
 
