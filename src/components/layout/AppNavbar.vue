@@ -245,7 +245,7 @@ export default {
         // notificationsListItemLeadingCheckedTextColor: '',
         notificationsListItemContentTitleColor: 'white',
         notificationsListItemContentTimeColor: 'white',
-        notificationsListItemContentTitleStrongColor: '#000',
+        notificationsListItemContentTitleStrongColor: '#efefef',
         // notificationsTogglerIconBgColor: '',
         // notificationsTogglerIconColor: '',
         // notificationsTogglerIconBgHoverColor: '',
