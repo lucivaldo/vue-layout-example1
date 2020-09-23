@@ -185,7 +185,28 @@ export default {
         appNavbarUserToggleActionsColor: getStyle(root, '--app-navbar-user-toggle-actions-color'),
         appNavbarUserToggleActionsHoverColor: getStyle(root, '--app-navbar-user-toggle-actions-hover-color'),
 
+        notificationsBgColor: getStyle(root, '--notifications-bg-color'),
+        notificationsBoxShadowColor: getStyle(root, '--notifications-box-shadow-color'),
+        notificationsHeaderTitleColor: getStyle(root, '--notifications-header-title-color'),
+        notificationsFooterBgColor: getStyle(root, '--notifications-footer-bg-color'),
+        notificationsActionLinkColor: getStyle(root, '--notifications-action-link-color'),
+        notificationsActionLinkHoverColor: getStyle(root, '--notifications-action-link-hover-color'),
+        notificationsListItemBgColor: getStyle(root, '--notifications-list-item-bg-color'),
+        notificationsListItemLeadingBgColor: getStyle(root, '--notifications-list-item-leading-bg-color'),
+        notificationsListItemLeadingTextColor: getStyle(root, '--notifications-list-item-leading-text-color'),
+        notificationsListItemLeadingCheckedBgColor: getStyle(root, '--notifications-list-item-leading-checked-bg-color'),
+        notificationsListItemLeadingCheckedTextColor: getStyle(root, '--notifications-list-item-leading-checked-text-color'),
+        notificationsListItemContentTitleColor: getStyle(root, '--notifications-list-item-content-title-color'),
+        notificationsListItemContentTimeColor: getStyle(root, '--notifications-list-item-content-time-color'),
+        notificationsListItemContentTitleStrongColor: getStyle(root, '--notifications-list-item-content-title-strong-color'),
+        notificationsTogglerIconBgColor: getStyle(root, '--notifications-toggler-icon-bg-color'),
+        notificationsTogglerIconColor: getStyle(root, '--notifications-toggler-icon-color'),
+        notificationsTogglerIconBgHoverColor: getStyle(root, '--notifications-toggler-icon-bg-hover-color'),
+        notificationsTogglerIconHoverColor: getStyle(root, '--notifications-toggler-icon-hover-color'),
+        notificationsHasNotificationsTogglerIndicatorBgColor: getStyle(root, '--notifications-has-notifications-toggler-indicator-bg-color'),
+
         appNavbarUserActionsBgColor: getStyle(root, '--app-navbar-user-actions-bg-color'),
+        appNavbarUserActionsBoxShadowColor: getStyle(root, '--app-navbar-user-actions-box-shadow-color'),
         appNavbarUserActionsItemBgColor: getStyle(root, '--app-navbar-user-actions-item-bg-color'),
         appNavbarUserActionsItemBgHoverColor: getStyle(root, '--app-navbar-user-actions-item-bg-hover-color'),
         appNavbarUserActionsItemColor: getStyle(root, '--app-navbar-user-actions-item-color'),
@@ -211,7 +232,28 @@ export default {
         appNavbarUserToggleActionsColor: 'white',
         appNavbarUserToggleActionsHoverColor: 'white',
 
+        notificationsBgColor: '#333',
+        notificationsBoxShadowColor: 'rgba(240, 240, 240, 0.85)',
+        notificationsHeaderTitleColor: '#f5f5f5',
+        notificationsFooterBgColor: 'white',
+        // notificationsActionLinkColor: '',
+        // notificationsActionLinkHoverColor: '',
+        notificationsListItemBgColor: '#444',
+        // notificationsListItemLeadingBgColor: '',
+        // notificationsListItemLeadingTextColor: '',
+        // notificationsListItemLeadingCheckedBgColor: '',
+        // notificationsListItemLeadingCheckedTextColor: '',
+        notificationsListItemContentTitleColor: 'white',
+        notificationsListItemContentTimeColor: 'white',
+        notificationsListItemContentTitleStrongColor: '#000',
+        // notificationsTogglerIconBgColor: '',
+        // notificationsTogglerIconColor: '',
+        // notificationsTogglerIconBgHoverColor: '',
+        // notificationsTogglerIconHoverColor: '',
+        // notificationsHasNotificationsTogglerIndicatorBgColor: '',
+
         appNavbarUserActionsBgColor: '#333',
+        appNavbarUserActionsBoxShadowColor: 'rgba(200, 200, 200, .85)',
         appNavbarUserActionsItemBgColor: '#333',
         appNavbarUserActionsItemBgHoverColor: '#111',
         appNavbarUserActionsItemColor: 'white',
@@ -259,10 +301,32 @@ export default {
   --app-navbar-user-toggle-actions-hover-color: #333;
 
   --app-navbar-user-actions-bg-color: white;
+  --app-navbar-user-actions-box-shadow-color: rgba(0, 0, 0, 0.11);
   --app-navbar-user-actions-item-bg-color: white;
   --app-navbar-user-actions-item-bg-hover-color: rgba(0, 0, 0, 0.05);
   --app-navbar-user-actions-item-color: #333;
   --app-navbar-user-actions-item-hover-color: #000;
+
+  --notifications-bg-color: white;
+  --notifications-box-shadow-color: rgba(0, 0, 0, 0.11);
+  --notifications-header-title-color: #999;
+  --notifications-footer-bg-color: rgba(0, 0, 0, 0.05);
+  --notifications-action-link-color: #2886C9;
+  --notifications-action-link-hover-color: #2d57b3;
+  --notifications-list-item-bg-color: #fffaf0;
+  --notifications-list-item-leading-bg-color: orange;
+  --notifications-list-item-leading-text-color: white;
+  --notifications-list-item-leading-checked-bg-color: #648b46;
+  --notifications-list-item-leading-checked-text-color: white;
+  --notifications-list-item-content-title-color: #888;
+  --notifications-list-item-content-time-color: #888;
+  --notifications-list-item-content-title-strong-color: #555;
+  --notifications-toggler-icon-bg-color: rgba(200, 200, 200, .15);
+  --notifications-toggler-icon-color: #6a6a6a;
+  --notifications-toggler-icon-bg-hover-color: rgba(100, 100, 100, .15);
+  --notifications-toggler-icon-hover-color: #333;
+  --notifications-has-notifications-toggler-indicator-bg-color: tomato;
+
   --app-navbar-height: 3.75rem;
 }
 
@@ -359,10 +423,10 @@ export default {
 
     &__actions {
       background-color: var(--app-navbar-user-actions-bg-color);
-      border-top: 1px solid rgba(0, 0, 0, 0.11);
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11),
-                  0 2px 2px rgba(0, 0, 0, 0.11),
-                  0 4px 4px rgba(0, 0, 0, 0.11);
+      border-top: 1px solid var(--app-navbar-user-actions-box-shadow-color);
+      box-shadow: 0 1px 1px var(--app-navbar-user-actions-box-shadow-color),
+                  0 2px 2px var(--app-navbar-user-actions-box-shadow-color),
+                  0 4px 4px var(--app-navbar-user-actions-box-shadow-color);
       position: absolute;
       top: 100%;
       right: 0;
@@ -452,7 +516,7 @@ export default {
 }
 
 .notifications {
-  background-color: var(----app-navbar-bg-color);
+  background-color: var(--notifications-bg-color);
   display: flex;
   align-items: center;
   margin-right: .85rem;
@@ -462,11 +526,11 @@ export default {
   &__content {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    border-top: 1px solid rgba(0, 0, 0, 0.11);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11),
-                0 2px 2px rgba(0, 0, 0, 0.11),
-                0 4px 4px rgba(0, 0, 0, 0.11);
+    background-color: inherit;
+    border-top: 1px solid var(--notifications-box-shadow-color);
+    box-shadow: 0 1px 1px var(--notifications-box-shadow-color),
+                0 2px 2px var(--notifications-box-shadow-color),
+                0 4px 4px var(--notifications-box-shadow-color);
     position: fixed;
     top: calc(var(--app-navbar-height) - 4px);
     right: .5rem;
@@ -484,7 +548,7 @@ export default {
     padding: 1rem .75rem;
 
     &__title {
-      color: #999;
+      color: var(--notifications-header-title-color);
       font-weight: bold;
       text-transform: uppercase;
     }
@@ -496,19 +560,19 @@ export default {
   }
 
   &__footer {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: var(--notifications-footer-bg-color);
     padding: .75rem 1rem;
     text-align: center;
   }
 
   &__header, &__footer {
     &__action {
-      color: #2886C9;
+      color: var(--notifications-action-link-color);
       font-weight: 700;
       text-decoration: none;
 
       &:hover {
-        color: #2d57b3;
+        color: var(--notifications-action-link-hover-color);
       }
     }
   }
@@ -517,7 +581,7 @@ export default {
     overflow: auto;
 
     &__item {
-      background-color: #fffaf0;
+      background-color: var(--notifications-list-item-bg-color);
       border-radius: 5px;
       display: flex;
       align-items: center;
@@ -530,7 +594,7 @@ export default {
     flex: 0 0 auto;
     border-radius: 50%;
     background-color: orange;
-    color: white;
+    color: var(--notifications-list-item-leading-text-color);
     margin-right: .75rem;
     width: 3rem;
     height: 3rem;
@@ -540,20 +604,25 @@ export default {
   }
 
   &__list__item--checked &__list__item__leading {
-    background-color: #648b46;
+    background-color: var(--notifications-list-item-leading-checked-bg-color);
+    color: var(--notifications-list-item-leading-checked-text-color);
   }
 
   &__list__item__content {
     display: flex;
     flex-direction: column;
 
-    &__title, &__time {
-      color: #888;
+    &__title {
+      color: var(--notifications-list-item-content-title-color);
+    }
+
+    &__time {
+      color: var(--notifications-list-item-content-time-color);
     }
 
     &__title {
       strong {
-        color: #555;
+        color: var(--notifications-list-item-content-title-strong-color);
       }
     }
   }
@@ -565,8 +634,8 @@ export default {
     position: relative;
 
     .icon {
-      background-color: rgba(200, 200, 200, .15);
-      color: #6a6a6a;
+      background-color: var(--notifications-toggler-icon-bg-color);
+      color: var(--notifications-toggler-icon-color);
       display: inline-block;
       border-radius: .5rem;
       width: 2rem;
@@ -586,7 +655,7 @@ export default {
     display: block;
     width: .75rem;
     height: .75rem;
-    background-color: coral;
+    background-color: var(--notifications-has-notifications-toggler-indicator-bg-color);
     border-radius: 50%;
     position: absolute;
     top: 0;
