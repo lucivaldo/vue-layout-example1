@@ -179,8 +179,8 @@ export default {
         appNavbarUserNameHover: getStyle(root, '--app-navbar-user-name-hover'),
         appNavbarUserRole: getStyle(root, '--app-navbar-user-role'),
         appNavbarUserRoleHover: getStyle(root, '--app-navbar-user-role-hover'),
-        appNavbarUserToggleActions: getStyle(root, '--app-navbar-user-toggler'),
-        appNavbarUserToggleActionsHover: getStyle(root, '--app-navbar-user-toggler-hover'),
+        appNavbarUserToggler: getStyle(root, '--app-navbar-user-toggler'),
+        appNavbarUserTogglerHover: getStyle(root, '--app-navbar-user-toggler-hover'),
 
         notificationsBg: getStyle(root, '--notifications-bg'),
         notificationsBoxShadow: getStyle(root, '--notifications-box-shadow'),
@@ -227,8 +227,8 @@ export default {
         appNavbarUserNameHover: 'white',
         appNavbarUserRole: 'white',
         appNavbarUserRoleHover: 'white',
-        appNavbarUserToggleActions: 'white',
-        appNavbarUserToggleActionsHover: 'white',
+        appNavbarUserToggler: 'white',
+        appNavbarUserTogglerHover: 'white',
 
         notificationsBg: '#333',
         notificationsBoxShadow: 'rgba(240, 240, 240, 0.85)',
