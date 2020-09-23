@@ -356,13 +356,13 @@ $debug: false;
 $debug-color: coral;
 
 :root {
-  --app-primary-color: #112cd3;
-  --app-sidebar-bg-color: #112cd3;
-  --app-sidebar-nav-text-color: white;
+  --app-primary: #112cd3;
+  --app-sidebar-bg: #112cd3;
+  --app-sidebar-nav-text: white;
   --app-sidebar-width: 80%;
   --app-sidebar-icon-font-size: 1.2rem;
   --app-sidebar-icon-width: 2rem;
-  --app-sidebar-divider-color: rgba(255, 255, 255, .25);
+  --app-sidebar-divider: rgba(255, 255, 255, .25);
   --app-transition-timing: .4s;
   --app-sidebar-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -370,7 +370,7 @@ $debug-color: coral;
 .app-sidebar {
   @if $debug { border: 1px solid $debug-color; }
 
-  background-color: var(--app-sidebar-bg-color, #112cd3);
+  background-color: var(--app-sidebar-bg, #112cd3);
   position: fixed;
   top: 0;
   left: 0;
@@ -418,15 +418,15 @@ $debug-color: coral;
   flex-direction: column;
 
   &__header {
-    border-bottom: 1px solid var(--app-sidebar-divider-color);
+    border-bottom: 1px solid var(--app-sidebar-divider);
     display: flex;
     align-items: center;
     padding: 1.65rem 1rem;
 
     .icon-leading {
-      background-color: var(--app-sidebar-nav-text-color, white);
+      background-color: var(--app-sidebar-nav-text, white);
       border-radius: 555%;
-      color: var(--app-sidebar-bg-color, #112cd3);
+      color: var(--app-sidebar-bg, #112cd3);
       display: inline-flex;
       font-size: var(--app-sidebar-icon-font-size);
       justify-content: center;
@@ -437,13 +437,13 @@ $debug-color: coral;
     }
 
     &__title {
-      color: var(--app-sidebar-nav-text-color, white);
+      color: var(--app-sidebar-nav-text, white);
       font-size: 1.25rem;
       white-space: nowrap;
     }
 
     .app-sidebar__hide {
-      color: var(--app-sidebar-nav-text-color, white);
+      color: var(--app-sidebar-nav-text, white);
       margin-left: auto;
       display: inline-block;
       font-size: 1.15rem;
@@ -466,7 +466,7 @@ $debug-color: coral;
   }
 
   &__link {
-    color: var(--app-sidebar-nav-text-color, white);
+    color: var(--app-sidebar-nav-text, white);
     display: flex;
     align-items: center;
     padding: .85rem 1rem;
@@ -523,7 +523,7 @@ $debug-color: coral;
   }
 
   &__divider {
-    border-bottom: 1px solid var(--app-sidebar-divider-color);
+    border-bottom: 1px solid var(--app-sidebar-divider);
     display: block;
   }
 }

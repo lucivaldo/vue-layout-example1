@@ -25,21 +25,21 @@ export default {
 
 <style lang="scss">
 :root {
-  --bg-color: white;
-  --main-bg-color: white;
-  --main-text-color: #333;
+  --body-bg: white;
+  --main-bg: white;
+  --main-text: #333;
 
-  --headings-text-color: var(--main-text-color);
-  --headings-text-hover-color: #000;
+  --headings-text: var(--main-text);
+  --headings-text-hover: #000;
 }
 
 body {
-  background-color: var(--bg-color);
+  background: var(--body-bg);
 }
 
 #main {
-  background-color: var(--main-bg-color);
-  color: var(--main-text-color);
+  background: var(--main-bg);
+  color: var(--main-text);
   margin-top: var(--app-navbar-height);
   padding: .75rem;
 }
