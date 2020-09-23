@@ -586,7 +586,9 @@ export default {
     position: fixed;
     top: calc(var(--app-navbar-height) - 4px);
     right: .5rem;
-    width: 21.25rem;
+    width: 81%;
+    width: 81vw;
+    height: 80%;
     height: 80vh;
     transition: var(--app-transition-timing);
     visibility: hidden;
@@ -719,14 +721,6 @@ export default {
 .notifications--expand .notifications__content {
   visibility: visible;
   opacity: 1;
-}
-
-@media screen and (min-width: 360px) {
-  .notifications {
-    &__content {
-      width: 23.5rem;
-    }
-  }
 }
 
 @media screen and (min-width: 640px) {
