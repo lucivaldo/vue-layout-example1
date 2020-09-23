@@ -270,6 +270,11 @@ export default {
         headingTextHover: 'white',
       }
 
+      const themes = {
+        'light': initialColors,
+        'dark': darkMode,
+      }
+
       const transformKey = key => {
         return '--' + key.replace(/([A-Z])/g, "-$1").toLowerCase()
       }
@@ -280,10 +285,28 @@ export default {
         })
       }
 
+      const setTheme = (newTheme) => {
+        changeColors(themes[newTheme])
+        localStorage.setItem('theme', newTheme)
+      }
+
       const themeToggler = this.$refs['app-theme-toggler__toggler']
+
       themeToggler.addEventListener('click', () => {
         const checked = themeToggler.checked
-        checked ? changeColors(darkMode) : changeColors(initialColors)
+        checked ? setTheme('dark') : setTheme('light')
+      })
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const theme = localStorage.getItem('theme')
+
+        if (theme) {
+          setTheme(theme)
+
+          if (theme === 'dark') {
+            themeToggler.checked = true
+          }
+        }
       })
     }
   }
