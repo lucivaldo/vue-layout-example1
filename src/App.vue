@@ -25,12 +25,18 @@ export default {
 
 <style lang="scss">
 :root {
+  --bg-color: white;
   --main-bg-color: white;
   --main-text-color: #333;
 
   --headings-text-color: var(--main-text-color);
   --headings-text-hover-color: #000;
 }
+
+body {
+  background-color: var(--bg-color);
+}
+
 #main {
   background-color: var(--main-bg-color);
   color: var(--main-text-color);

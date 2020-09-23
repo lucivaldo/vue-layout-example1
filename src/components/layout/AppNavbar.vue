@@ -176,6 +176,7 @@ export default {
       const root = document.querySelector(':root')
 
       const initialColors = {
+        bgColor: getStyle(root, '--bg-color'),
         appNavbarBgColor: getStyle(root, '--app-navbar-bg-color'),
         appNavbarTextColor: getStyle(root, '--app-navbar-text-color'),
         appNavbarUserNameColor: getStyle(root, '--app-navbar-user-name-color'),
@@ -223,6 +224,7 @@ export default {
       }
 
       const darkMode = {
+        bgColor: '#333',
         appNavbarBgColor: '#333',
         appNavbarTextColor: 'white',
         appNavbarUserNameColor: 'white',
