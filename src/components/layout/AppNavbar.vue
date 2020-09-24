@@ -592,8 +592,8 @@ export default {
     right: .5rem;
     width: 81%;
     width: 81vw;
-    height: 80%;
-    height: 80vh;
+    max-height: 80%;
+    max-height: 80vh;
     transition: var(--app-transition-timing);
     visibility: hidden;
     opacity: 0;
